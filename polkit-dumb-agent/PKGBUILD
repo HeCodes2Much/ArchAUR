@@ -1,0 +1,32 @@
+# Maintainer: Martin Sandsmark <martin.sandsmark@kde.org>
+pkgname=polkit-dumb-agent
+pkgver=2021.01.17
+pkgrel=1
+pkgdesc="A polkit agent in 145 lines of code using Qt and libsystemd, because polkit sucks."
+arch=('any')
+groups=('therepoclub')
+url="https://github.com/sandsmark/polkit-dumb-agent"
+license=(GPL3)
+depends=(qt5-base kdesu systemd)
+makedepends=(git cmake)
+provides=(polkit-dumb-agent)
+conflicts=(polkit-dumb-agent)
+source=('git+https://github.com/sandsmark/polkit-dumb-agent.git')
+md5sums=('SKIP')
+
+prepare() {
+    mkdir -p build
+}
+
+build() {
+    cd build
+        cmake ../polkit-dumb-agent \
+        -DCMAKE_BUILD_TYPE=Debug \
+        -DCMAKE_INSTALL_PREFIX=/usr
+    make
+}
+
+package() {
+    cd build
+    make DESTDIR="$pkgdir" install
+}

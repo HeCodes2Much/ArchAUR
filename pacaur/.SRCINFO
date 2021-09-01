@@ -1,0 +1,17 @@
+pkgbase = pacaur
+	pkgdesc = A bach AUR wrapper
+	pkgver = 2021.08.24
+	pkgrel = 1
+	url = https://github.com/The-Repo-Club/pacaur
+	arch = any
+	groups = therepoclub
+	license = GPL3
+	depends = pacman
+	depends = jshon
+	depends = tar
+	optdepends = git: AUR4 git support
+	provides = pacaur
+	source = pacaur-2021.08.24.tar.gz::https://github.com/The-Repo-Club/pacaur/archive/2021.08.24.tar.gz
+	sha256sums = bfa9d476d9d6460decf544a90e1c43a94e91780198e3ce7f87789bff465de2fa
+
+pkgname = pacaur

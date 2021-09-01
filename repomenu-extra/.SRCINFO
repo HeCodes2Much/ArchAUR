@@ -1,0 +1,22 @@
+pkgbase = repomenu-extra
+	pkgdesc = addons for repomenu
+	pkgver = 2021.08.24
+	pkgrel = 1
+	url = https://github.com/The-Repo-Club/repomenu-extra
+	arch = any
+	groups = therepoclub
+	license = GPL3
+	depends = bash
+	depends = glib2
+	depends = autorandr
+	depends = repomenu
+	depends = repomenu-schemas
+	depends = networkmanager
+	optdepends = cutycapt: Taking screenshots with bm command.
+	optdepends = instaaur: Using the aur with pacman script.
+	optdepends = ffmpeg: music script depends on this.
+	provides = repomenu-extra
+	source = repomenu-extra-2021.08.24.tar.gz::https://github.com/The-Repo-Club/repomenu-extra/archive/2021.08.24.tar.gz
+	sha256sums = e7fbe5b79377c8cc20b1640fbcb37319529f74f7eb7c44728c5d573c096d56b6
+
+pkgname = repomenu-extra

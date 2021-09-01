@@ -1,0 +1,38 @@
+# Upstream: RuneScape Linux <noreply@jagex.com>
+# Contributor: Ivan Puntiy <ivan.puntiy-at-gmail>
+# Contributor: Mantas Mikulėnas <grawity@gmail.com>
+
+pkgname=runescape-launcher
+pkgver=2.2.9
+pkgrel=1
+pkgdesc="RuneScape Game Client (NXT)"
+arch=(x86_64)
+license=(custom)
+url="https://www.runescape.com/"
+depends=(cairo gcc-libs gdk-pixbuf2 glib2 glibc gtk2 libcap libglvnd libsm libx11 libxxf86vm openssl pango sdl2 zlib)
+source=("${pkgname}_${pkgver}_amd64.deb::https://content.runescape.com/downloads/ubuntu/pool/non-free/r/$pkgname/${pkgname}_${pkgver}_amd64.deb")
+sha256sums=('SKIP')
+install="runescape.install"
+
+prepare() {
+    rm -rf "$srcdir/$pkgname-$pkgver"
+    mkdir "$srcdir/$pkgname-$pkgver"
+    cd "$srcdir/$pkgname-$pkgver"
+
+    printf '%s\n' "Extracting control files..."
+    bsdtar xvf ../control.tar.xz
+
+    printf '%s\n' "Extracting data files..."
+    bsdtar xvf ../data.tar.xz
+}
+
+package() {
+    cd "$srcdir/$pkgname-$pkgver"
+
+    cp -a usr "$pkgdir"
+
+    install -Dm0644 copyright "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+    install -Dm0644 changelog "$pkgdir"/usr/share/doc/$pkgname/changelog
+}
+
+# vim: ft=sh:ts=4:sw=4:et:nowrap

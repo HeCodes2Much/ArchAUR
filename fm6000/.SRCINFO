@@ -1,0 +1,14 @@
+pkgbase = fm6000
+	pkgdesc = Simple system info fetching tool
+	pkgver = 2021.05.20
+	pkgrel = 1
+	url = https://github.com/anhsirk0/fetch-master-6000
+	arch = any
+	groups = therepoclub
+	license = GPL3
+	makedepends = git
+	depends = perl
+	source = fm6000-2021.05.20::git+https://github.com/anhsirk0/fetch-master-6000
+	sha256sums = SKIP
+
+pkgname = fm6000

@@ -1,0 +1,26 @@
+pkgbase = repomenu
+	pkgdesc = dmenu like menu with the Dracula theme
+	pkgver = 2021.08.21
+	pkgrel = 1
+	url = https://github.com/The-Repo-Club/repomenu
+	arch = any
+	groups = therepoclub
+	license = MIT
+	depends = python
+	depends = libxinerama
+	depends = libxft
+	optdepends = repomenu-extra: Extra script that repomenu can use
+	optdepends = repomenu-schemas: gsettings for repomenu
+	optdepends = siji: font used by default
+	optdepends = nerd-fonts-fira-code: font used by default
+	optdepends = adobe-source-code-pro-fonts: font used by default
+	optdepends = ttf-material-design-icons: font used by default
+	optdepends = ttf-remixicon: font used by default
+	provides = repomenu
+	provides = dmenu
+	conflicts = dmenu
+	replaces = dmenu
+	source = repomenu-2021.08.21.tar.gz::https://github.com/The-Repo-Club/repomenu/archive/2021.08.21.tar.gz
+	sha256sums = 3bb5cdeca6ec3f5ddd27b194cb8848882d1b31c4c848e8d7e46d9629a588e9b5
+
+pkgname = repomenu

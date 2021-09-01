@@ -1,0 +1,26 @@
+pkgbase = repowm
+	pkgdesc = A dynamic window manager for X
+	pkgver = 2021.08.21
+	pkgrel = 1
+	url = https://github.com/The-Repo-Club/repowm
+	install = repowm.install
+	arch = i686
+	arch = x86_64
+	groups = therepoclub
+	license = MIT
+	depends = libx11
+	depends = libxinerama
+	depends = libxft
+	depends = freetype2
+	depends = repomenu
+	optdepends = repowm-schemas: gsettings for repowm
+	optdepends = siji: font used by default
+	optdepends = nerd-fonts-fira-code: font used by default
+	optdepends = adobe-source-code-pro-fonts: font used by default
+	optdepends = ttf-material-design-icons: font used by default
+	optdepends = ttf-remixicon: font used by default
+	options = zipman
+	source = repowm-2021.08.21.tar.gz::https://github.com/The-Repo-Club/repowm/archive/2021.08.21.tar.gz
+	sha256sums = cebe216df810b553c0a51420cc4fa9f61a550ab2fa35523e7ae096b48968a95c
+
+pkgname = repowm

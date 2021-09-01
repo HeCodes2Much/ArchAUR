@@ -1,0 +1,19 @@
+# Maintainer: The-Repo-Club <The-Repo-Club@github.com>
+# Contributor: The-Repo-Club <The-Repo-Club@github.com>
+pkgname=sddm-endeavour
+pkgver=2021.07.05
+pkgrel=1
+pkgdesc='Endeavour Dracula Theme for SDDM'
+arch=('any')
+url="https://github.com/The-Repo-Club/$pkgname"
+license=('MIT')
+depends=('sddm')
+makedepends=('git')
+source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+package() {
+  cd "${srcdir}/${pkgname}-$pkgver"
+  make DESTDIR="$pkgdir" install
+  install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

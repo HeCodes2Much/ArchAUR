@@ -1,0 +1,25 @@
+pkgbase = bfetch
+	pkgdesc = A CLI system information tool written in BASH that supports displaying images.
+	pkgver = 2021.08.21
+	pkgrel = 1
+	url = https://github.com/The-Repo-Club/bfetch
+	arch = any
+	groups = therepoclub
+	license = MIT
+	makedepends = git
+	depends = bash
+	optdepends = catimg: Display Images
+	optdepends = chafa: Image to text support
+	optdepends = feh: Wallpaper Display
+	optdepends = imagemagick: Image cropping / Thumbnail creation / Take a screenshot
+	optdepends = jp2a: Display Images
+	optdepends = libcaca: Display Images
+	optdepends = nitrogen: Wallpaper Display
+	optdepends = w3m: Display Images
+	optdepends = xorg-xdpyinfo: Resolution detection [Single Monitor]
+	optdepends = xorg-xprop: Desktop Environment and Window Manager
+	optdepends = xorg-xrandr: Resolution detection [Multi Monitor + Refresh rates]
+	source = bfetch-2021.08.21.tar.gz::https://github.com/The-Repo-Club/bfetch/archive/2021.08.21.tar.gz
+	sha256sums = 346fe4a926012245238a069a4e595c238af14137d3b7632346367ccd5b1d5822
+
+pkgname = bfetch

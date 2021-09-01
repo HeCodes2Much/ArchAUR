@@ -1,0 +1,21 @@
+# Maintainer: The-Repo-Club <The-Repo-Club@github.com>
+# Contributor: The-Repo-Club <The-Repo-Club@github.com>
+pkgname=repomenu-extra
+pkgver=2021.08.24
+pkgrel=1
+pkgdesc="addons for repomenu"
+url="https://github.com/The-Repo-Club/$pkgname"
+arch=('any')
+groups=('therepoclub')
+license=('GPL3')
+depends=('bash' 'glib2' 'autorandr' 'repomenu' 'repomenu-schemas' 'networkmanager')
+optdepends=('cutycapt: Taking screenshots with bm command.' 'instaaur: Using the aur with pacman script.' 'ffmpeg: music script depends on this.')
+provides=($pkgname)
+source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
+sha256sums=('e7fbe5b79377c8cc20b1640fbcb37319529f74f7eb7c44728c5d573c096d56b6')
+
+package() {
+    cd "$srcdir/$pkgname-$pkgver"
+    make PREFIX=/usr DESTDIR="$pkgdir" install
+    install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}

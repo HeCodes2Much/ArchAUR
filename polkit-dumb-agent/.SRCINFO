@@ -1,0 +1,19 @@
+pkgbase = polkit-dumb-agent
+	pkgdesc = A polkit agent in 145 lines of code using Qt and libsystemd, because polkit sucks.
+	pkgver = 2021.01.17
+	pkgrel = 1
+	url = https://github.com/sandsmark/polkit-dumb-agent
+	arch = any
+	groups = therepoclub
+	license = GPL3
+	makedepends = git
+	makedepends = cmake
+	depends = qt5-base
+	depends = kdesu
+	depends = systemd
+	provides = polkit-dumb-agent
+	conflicts = polkit-dumb-agent
+	source = git+https://github.com/sandsmark/polkit-dumb-agent.git
+	md5sums = SKIP
+
+pkgname = polkit-dumb-agent

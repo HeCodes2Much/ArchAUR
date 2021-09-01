@@ -1,0 +1,32 @@
+# Maintainer: TheRepoClub <TheRepoClub@github.com>
+# Contributor: TheRepoClub <TheRepoClub@github.com>
+pkgname=repomenu-schemas
+pkgver=2021.08.21
+pkgrel=1
+pkgdesc="schemas for repomenu"
+url="https://github.com/The-Repo-Club/$pkgname"
+arch=('any')
+groups=('therepoclub')
+license=('GPL3')
+provides=("repomenu-schemas=$pkgver")
+depends=('glib2' 'dconf')
+makedepends=('gobject-introspection' 'git' 'meson')
+source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
+sha256sums=('d94d80452a44659db397f80b5a4964a05ee1718981ab7f2e80be782858c959cc')
+
+prepare() {
+  cd "$srcdir/$pkgname-$pkgver"
+}
+
+build() {
+  arch-meson $srcdir/$pkgname-$pkgver build
+  ninja -C build
+}
+
+check() {
+  meson test -C build
+}
+
+package() {
+  DESTDIR="$pkgdir" meson install -C build
+}

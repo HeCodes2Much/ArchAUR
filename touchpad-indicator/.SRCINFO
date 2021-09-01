@@ -1,0 +1,24 @@
+pkgbase = touchpad-indicator
+	pkgdesc = An indicator for the touchpad
+	pkgver = 2021.01.17
+	pkgrel = 3
+	url = https://github.com/atareao/Touchpad-Indicator
+	arch = any
+	license = GPL3
+	makedepends = git
+	depends = gdk-pixbuf2
+	depends = libappindicator-gtk3
+	depends = libnotify
+	depends = lsb-release
+	depends = librsvg
+	depends = python-xlib
+	depends = python-pyudev
+	depends = python-dbus
+	depends = python-evdev
+	depends = xorg-xinput
+	provides = touchpad-indicator
+	conflicts = touchpad-indicator
+	source = touchpad-indicator::git+https://github.com/atareao/Touchpad-Indicator.git
+	sha256sums = SKIP
+
+pkgname = touchpad-indicator

@@ -1,0 +1,28 @@
+# Maintainer: The-Repo-Club <The-Repo-Club@github.com>
+# Contributor: The-Repo-Club <The-Repo-Club@github.com>
+pkgname=fm6000
+pkgver=168.f4c7798
+pkgrel=1
+pkgdesc="Simple system info fetching tool"
+arch=('any')
+groups=('therepoclub')
+url="https://github.com/anhsirk0/fetch-master-6000"
+license=('GPL3')
+depends=(perl)
+makedepends=('git')
+source=("${pkgname}::git+$url")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "$pkgname"
+  ( set -o pipefail
+    git describe --long 2>/dev/null | sed 's/\([^-]*-g\)/r\1/;s/-/./g' ||
+    printf "%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+  )
+}
+
+package() {
+    cd "$pkgname"
+    install -Dm755 $pkgname.pl "$pkgdir/usr/bin/$pkgname"
+    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.md"
+}

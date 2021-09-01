@@ -1,0 +1,36 @@
+# Maintainer: The-Repo-Club <The-Repo-Club@github.com>
+# Contributor: The-Repo-Club <The-Repo-Club@github.com>
+pkgname=repomenu
+pkgver=2021.08.25
+pkgrel=1
+pkgdesc="dmenu like menu with the Dracula theme"
+url="https://github.com/The-Repo-Club/$pkgname"
+arch=('any')
+groups=('therepoclub')
+license=('MIT')
+depends=('python' 'libxinerama' 'libxft')
+optdepends=('repomenu-extra: Extra script that repomenu can use'
+        'repomenu-schemas: gsettings for repomenu'
+        'siji: font used by default'
+        'nerd-fonts-fira-code: font used by default'
+        'adobe-source-code-pro-fonts: font used by default'
+        'ttf-material-design-icons: font used by default'
+        'ttf-remixicon: font used by default')
+provides=($pkgname dmenu)
+conflicts=(dmenu)
+replaces=(dmenu)
+source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
+sha256sums=('29716d9d96a62fe2bd60d5f0459238ed9d4835d2efa7836dd2f07ce64ea01746')
+
+build() {
+    cd "$srcdir/$pkgname-$pkgver"
+    make \
+        X11INC=/usr/include/X11 \
+        X11LIB=/usr/lib/X11
+}
+
+package() {
+    cd "$srcdir/$pkgname-$pkgver"
+    make PREFIX=/usr DESTDIR="$pkgdir" install
+    install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}

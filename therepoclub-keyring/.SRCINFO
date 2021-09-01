@@ -1,0 +1,15 @@
+pkgbase = therepoclub-keyring
+	pkgdesc = TheRepoClub keyring
+	pkgver = 2021.08.22
+	pkgrel = 1
+	url = https://github.com/ArchAUR/therepoclub-keyring
+	install = therepoclub-keyring.install
+	arch = any
+	groups = therepoclub
+	license = GPL3
+	source = therepoclub-keyring-2021.08.22::git+https://github.com/ArchAUR/therepoclub-keyring.git
+	source = therepoclub-keyring.install
+	sha256sums = SKIP
+	sha256sums = 3f623c5cca80c9d7e6d3aac675db6c5e8dab7e8ebafb3a18c49a1db26a8f1497
+
+pkgname = therepoclub-keyring

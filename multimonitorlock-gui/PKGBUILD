@@ -1,0 +1,22 @@
+# Maintainer: The-Repo-Club <The-Repo-Club@github.com>
+# Contributor: The-Repo-Club <The-Repo-Club@github.com>
+pkgname=multimonitorlock-gui
+pkgver=2021.08.20
+pkgrel=1
+pkgdesc='GUI for multimonitorlock to set the background using GTK3'
+arch=('any')
+groups=('therepoclub')
+url="https://github.com/The-Repo-Club/$pkgname"
+license=('GPL3')
+depends=('gtk3' 'multimonitorlock' 'python')
+source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
+sha256sums=('a4d31ab4db8cd9be9e4ec31d9b92165bca210b41305be5ea0fd86fb00d8e1928')
+
+package() {
+    mkdir -p $pkgdir/usr
+    cp -a $srcdir/$pkgname-$pkgver/usr/bin $pkgdir/usr/bin
+    mkdir -p $pkgdir/usr/share/applications
+    cp -a $srcdir/$pkgname-$pkgver/usr/share/applications/multimonitorlock-gui.desktop $pkgdir/usr/share/applications/multimonitorlock-gui.desktop
+    mkdir -p $pkgdir/usr/lib
+    cp -a $srcdir/$pkgname-$pkgver/usr/lib/multimonitorlock-gui $pkgdir/usr/lib/multimonitorlock-gui
+}

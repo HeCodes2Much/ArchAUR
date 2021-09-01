@@ -1,0 +1,21 @@
+# Maintainer: The-Repo-Club <The-Repo-Club@github.com>
+# Contributor: The-Repo-Club <The-Repo-Club@github.com>
+
+pkgname=therepoclub-mirrorlist
+pkgver=2021.08.22
+pkgrel=1
+pkgdesc="TheRepoClub mirrorlist"
+arch=('any')
+groups=('therepoclub')
+url="https://github.com/ArchAUR/$pkgname"
+license=('GPL3')
+options=(!strip !emptydirs)
+backup=("etc/pacman.d/$pkgname")
+source=("${pkgname}-$pkgver::git+https://github.com/ArchAUR/$pkgname.git")
+sha256sums=('SKIP')
+
+package() {
+    cd "${pkgname}-$pkgver"
+
+    install -Dm644 "$srcdir/$pkgname-$pkgver/$pkgname" "$pkgdir/etc/pacman.d/$pkgname"
+}

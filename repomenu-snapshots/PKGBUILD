@@ -12,7 +12,7 @@ depends=('bash' 'repomenu' 'repomenu-schemas')
 optdepends=('cutycapt: Taking screenshots with bm command.')
 provides=($pkgname)
 source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
-sha256sums=('8a3107d99391d0f0767e49109f39f50edd2949e9489c70dff5aa72866619d6d7')
+sha256sums=('35c56fed8d853147aa6758e1af28af7158aa5166bde1d24f62af5ab72d193b43')
 
 package() {
     cd "$srcdir/$pkgname-$pkgver"

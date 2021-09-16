@@ -1,0 +1,21 @@
+# Maintainer: The-Repo-Club <The-Repo-Club@github.com>
+# Contributor: The-Repo-Club <The-Repo-Club@github.com>
+pkgname=repomenu-snapshots
+pkgver=2021.09.16
+pkgrel=1
+pkgdesc="addons for repomenu"
+url="https://github.com/The-Repo-Club/$pkgname"
+arch=('any')
+groups=('therepoclub')
+license=('GPL3')
+depends=('bash' 'repomenu' 'repomenu-schemas')
+optdepends=('cutycapt: Taking screenshots with bm command.')
+provides=($pkgname)
+source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
+sha256sums=('8a3107d99391d0f0767e49109f39f50edd2949e9489c70dff5aa72866619d6d7')
+
+package() {
+    cd "$srcdir/$pkgname-$pkgver"
+    make PREFIX=/usr DESTDIR="$pkgdir" install
+    install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}

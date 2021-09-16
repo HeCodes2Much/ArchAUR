@@ -1,0 +1,17 @@
+pkgbase = repomenu-snapshots
+	pkgdesc = addons for repomenu
+	pkgver = 2021.09.16
+	pkgrel = 1
+	url = https://github.com/The-Repo-Club/repomenu-snapshots
+	arch = any
+	groups = therepoclub
+	license = GPL3
+	depends = bash
+	depends = repomenu
+	depends = repomenu-schemas
+	optdepends = cutycapt: Taking screenshots with bm command.
+	provides = repomenu-snapshots
+	source = repomenu-snapshots-2021.09.16.tar.gz::https://github.com/The-Repo-Club/repomenu-snapshots/archive/2021.09.16.tar.gz
+	sha256sums = 8a3107d99391d0f0767e49109f39f50edd2949e9489c70dff5aa72866619d6d7
+
+pkgname = repomenu-snapshots

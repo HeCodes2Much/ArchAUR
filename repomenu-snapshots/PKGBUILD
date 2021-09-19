@@ -1,7 +1,7 @@
 # Maintainer: The-Repo-Club <The-Repo-Club@github.com>
 # Contributor: The-Repo-Club <The-Repo-Club@github.com>
 pkgname=repomenu-snapshots
-pkgver=2021.09.16
+pkgver=2021.09.19
 pkgrel=1
 pkgdesc="addons for repomenu"
 url="https://github.com/The-Repo-Club/$pkgname"
@@ -12,7 +12,7 @@ depends=('bash' 'repomenu' 'repomenu-schemas')
 optdepends=('cutycapt: Taking screenshots with bm command.')
 provides=($pkgname)
 source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
-sha256sums=('890ef19bfa9c9642f3d6dc89839db6be0727b84cb15e1b8ca784d5a6a261d7af')
+sha256sums=('07c2eebc6a4216a1e2bc347e42774b2770a4e3bb9f21b08917b4c918dfb2fc19')
 
 prepare() {
   cd "$srcdir/$pkgname-$pkgver"

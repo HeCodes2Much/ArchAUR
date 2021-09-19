@@ -12,6 +12,6 @@ pkgbase = repomenu-snapshots
 	optdepends = cutycapt: Taking screenshots with bm command.
 	provides = repomenu-snapshots
 	source = repomenu-snapshots-2021.09.16.tar.gz::https://github.com/The-Repo-Club/repomenu-snapshots/archive/2021.09.16.tar.gz
-	sha256sums = 35c56fed8d853147aa6758e1af28af7158aa5166bde1d24f62af5ab72d193b43
+	sha256sums = 890ef19bfa9c9642f3d6dc89839db6be0727b84cb15e1b8ca784d5a6a261d7af
 
 pkgname = repomenu-snapshots

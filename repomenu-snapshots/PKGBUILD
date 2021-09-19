@@ -12,9 +12,23 @@ depends=('bash' 'repomenu' 'repomenu-schemas')
 optdepends=('cutycapt: Taking screenshots with bm command.')
 provides=($pkgname)
 source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
-sha256sums=('35c56fed8d853147aa6758e1af28af7158aa5166bde1d24f62af5ab72d193b43')
+sha256sums=('890ef19bfa9c9642f3d6dc89839db6be0727b84cb15e1b8ca784d5a6a261d7af')
+
+prepare() {
+  cd "$srcdir/$pkgname-$pkgver"
+}
+
+build() {
+  arch-meson $srcdir/$pkgname-$pkgver build
+  ninja -C build
+}
+
+check() {
+  meson test -C build
+}
 
 package() {
+    DESTDIR="$pkgdir" meson install -C build
     cd "$srcdir/$pkgname-$pkgver"
     make PREFIX=/usr DESTDIR="$pkgdir" install
     install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE

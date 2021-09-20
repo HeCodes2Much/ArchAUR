@@ -11,11 +11,9 @@ url="https://github.com/ArchAUR/$pkgname"
 license=('GPL3')
 options=(!strip !emptydirs)
 backup=("etc/pacman.d/$pkgname")
-source=("${pkgname}-$pkgver::git+https://github.com/ArchAUR/$pkgname.git")
+source=("$pkgname")
 sha256sums=('SKIP')
 
 package() {
-    cd "${pkgname}-$pkgver"
-
-    install -Dm644 "$srcdir/$pkgname-$pkgver/$pkgname" "$pkgdir/etc/pacman.d/$pkgname"
+    install -Dm644 "$srcdir/$pkgname" "$pkgdir/etc/pacman.d/$pkgname"
 }

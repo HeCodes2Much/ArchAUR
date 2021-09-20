@@ -9,12 +9,11 @@ arch=('any')
 groups=('therepoclub')
 url="https://github.com/ArchAUR/$pkgname"
 license=('GPL3')
-source=("${pkgname}-$pkgver::git+https://github.com/ArchAUR/$pkgname.git" "${pkgname}.install")
+source=("therepoclub.gpg" "${pkgname}.install")
 sha256sums=('SKIP' '3f623c5cca80c9d7e6d3aac675db6c5e8dab7e8ebafb3a18c49a1db26a8f1497')
 install=${pkgname}.install
 
 package() {
-    cd "${pkgname}-$pkgver"
     local destdir=usr/share/pacman/keyrings
 
     install -Dm644 therepoclub.gpg $pkgdir/$destdir/therepoclub.gpg

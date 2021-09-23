@@ -1,7 +1,7 @@
 # Maintainer: The-Repo-Club <The-Repo-Club@github.com>
 # Contributor: The-Repo-Club <The-Repo-Club@github.com>
 pkgname=repomenu-extra
-pkgver=2021.08.24
+pkgver=2021.09.23
 pkgrel=1
 pkgdesc="addons for repomenu"
 url="https://github.com/The-Repo-Club/$pkgname"
@@ -9,10 +9,10 @@ arch=('any')
 groups=('therepoclub')
 license=('GPL3')
 depends=('bash' 'glib2' 'autorandr' 'repomenu' 'repomenu-schemas' 'networkmanager')
-optdepends=('cutycapt: Taking screenshots with bm command.' 'pacaur: Using the aur with pacman script.' 'ffmpeg: music script depends on this.')
+optdepends=('cutycapt: Taking screenshots with bm command.' 'pacaur: Using the aur with pacman script.' 'ffmpeg: music script depends on this.' 'btrfs-snapshots: Scripts that are for the btrfs menu.')
 provides=($pkgname)
 source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
-sha256sums=('e7fbe5b79377c8cc20b1640fbcb37319529f74f7eb7c44728c5d573c096d56b6')
+sha256sums=('879f9c2d78a4aea181e9c30aeac56cb55c021c30d55301b637e0417e6d2ed98c')
 
 package() {
     cd "$srcdir/$pkgname-$pkgver"

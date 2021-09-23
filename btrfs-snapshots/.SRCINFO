@@ -1,0 +1,14 @@
+pkgbase = btrfs-snapshots
+	pkgdesc = addons for repomenu
+	pkgver = 2021.09.23
+	pkgrel = 1
+	url = https://github.com/The-Repo-Club/btrfs-snapshots
+	arch = any
+	groups = therepoclub
+	license = GPL3
+	depends = bash
+	provides = btrfs-snapshots
+	source = btrfs-snapshots-2021.09.23.tar.gz::https://github.com/The-Repo-Club/btrfs-snapshots/archive/2021.09.23.tar.gz
+	sha256sums = af5df3e8f49ac204c4d5d55f2530d416baa433c5d8cebee719101331761b7603
+
+pkgname = btrfs-snapshots

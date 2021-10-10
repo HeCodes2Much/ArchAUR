@@ -1,16 +1,16 @@
 # Maintainer: The-Repo-Club <The-Repo-Club@github.com>
 # Contributor: The-Repo-Club <The-Repo-Club@github.com>
 
-pkgname=('dracula-gtk-theme' 'dracula-qt5-theme' 'dracula-icons')
-pkgbase=dracula-themes
-_pkgname=Dracula
-pkgver=2021.08.25
+pkgname=('dracula-gtk-theme' 'dracula-qt5-theme' 'dracula-qt6-theme' 'dracula-icons')
+pkgbase=themix-dracula
+_pkgname=themix-Dracula
+pkgver=2021.10.10
 pkgrel=1
 arch=("any")
 url="https://github.com/The-Repo-Club/$_pkgname"
 license=('GPL')
 source=("${_pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
-sha256sums=('7c7047054fc8946a92f706c0a5e5804680c2b9d46e1ecae6e9ad9349d861739e')
+sha256sums=('SKIP')
 
 package_dracula-gtk-theme() {
     pkgdesc="This theme provides support for GTK-3 and GTK-2 based desktop environments like Gnome, Unity, Budgie, Pantheon, XFCE, Mate, etc. Also provides support for KDE plasma."
@@ -28,6 +28,15 @@ package_dracula-qt5-theme() {
 
     mkdir -p "${pkgdir}/usr/share/qt5ct/colors"
     cp -a ".qt5ct/colors/"* "${pkgdir}/usr/share/qt5ct/colors"
+}
+
+package_dracula-qt6-theme() {
+    pkgdesc="This theme provides support for QT6."
+
+    cd "$_pkgname-$pkgver"
+
+    mkdir -p "${pkgdir}/usr/share/qt6ct/colors"
+    cp -a ".qt6ct/colors/"* "${pkgdir}/usr/share/qt6ct/colors"
 }
 
 package_dracula-icons() {

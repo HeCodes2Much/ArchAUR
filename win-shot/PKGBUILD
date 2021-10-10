@@ -1,17 +1,17 @@
 # Maintainer: The-Repo-Club <The-Repo-Club@github.com>
 # Contributor: The-Repo-Club <The-Repo-Club@github.com>
-pkgname=wm-maim
-pkgver=2021.04.12
+pkgname=win-shot
+pkgver=2021.10.10
 pkgrel=1
-pkgdesc="simple screenshot script using maim"
+pkgdesc="simple screenshot script using imagemagick"
 arch=('any')
 groups=('therepoclub')
 url="https://github.com/The-Repo-Club/$pkgname"
-license=('CC BY-NC-SA 4.0')
-depends=('libnotify' 'maim' 'xdg-user-dirs' 'xdotool')
+license=('GPL3')
+depends=('libnotify' 'imagemagick' 'xdg-user-dirs' 'xdotool')
 optdepends=('xclip: Allow screenshots to be saved to clipboard')
 source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
-sha256sums=('cbd1f18975dd8ee065c1dd56ad6d681b051ed3e5704eef87a8d36a84328842b9')
+sha256sums=('0f722bdee5b44c34feb82e3844a1aebf86624726e95c06e986c890bf93a01d5d')
 
 package() {
   mkdir -p $pkgdir/usr

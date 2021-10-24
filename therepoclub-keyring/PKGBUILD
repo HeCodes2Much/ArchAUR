@@ -2,19 +2,19 @@
 # Contributor: The-Repo-Club <The-Repo-Club@github.com>
 
 pkgname=therepoclub-keyring
-pkgver=2021.08.22
+pkgver=2021.10.22
 pkgrel=1
 pkgdesc="TheRepoClub keyring"
 arch=('any')
 groups=('therepoclub')
 url="https://github.com/ArchAUR/$pkgname"
 license=('GPL3')
-source=("therepoclub.gpg" "${pkgname}.install")
-sha256sums=('SKIP' '3f623c5cca80c9d7e6d3aac675db6c5e8dab7e8ebafb3a18c49a1db26a8f1497')
+source=("therepoclub.pgp" "${pkgname}.install")
+sha256sums=('SKIP' 'SKIP')
 install=${pkgname}.install
 
 package() {
     local destdir=usr/share/pacman/keyrings
 
-    install -Dm644 therepoclub.gpg $pkgdir/$destdir/therepoclub.gpg
+    install -Dm644 therepoclub.pgp $pkgdir/$destdir/therepoclub.pgp
 }

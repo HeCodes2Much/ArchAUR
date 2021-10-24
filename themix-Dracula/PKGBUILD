@@ -4,13 +4,13 @@
 pkgname=('dracula-gtk-theme' 'dracula-qt5-theme' 'dracula-qt6-theme' 'dracula-icons')
 pkgbase=themix-dracula
 _pkgname=themix-Dracula
-pkgver=2021.10.10
+pkgver=2021.10.20
 pkgrel=1
 arch=("any")
 url="https://github.com/The-Repo-Club/$_pkgname"
 license=('GPL')
 source=("${_pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
-sha256sums=('SKIP')
+sha256sums=('ef5ded9bfb5fdb80c9e2ed62117802f7ff7c393e1448601ebc9d8dcf14cbbd22')
 
 package_dracula-gtk-theme() {
     pkgdesc="This theme provides support for GTK-3 and GTK-2 based desktop environments like Gnome, Unity, Budgie, Pantheon, XFCE, Mate, etc. Also provides support for KDE plasma."

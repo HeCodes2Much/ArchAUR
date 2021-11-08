@@ -1,0 +1,42 @@
+_pkgbasename=libxft-bgra
+_pkgbasever=2.3.4
+pkgname=lib32-$_pkgbasename
+pkgver=2.3.4.r.
+pkgrel=1
+pkgdesc="libXft with BGRA glyph (color emoji) rendering & scaling patches by Maxime Coste"
+arch=('x86_64')
+license=('custom')
+groups=('modified')
+provides=('lib32-libxft')
+conflicts=('lib32-libxft')
+url="https://xorg.freedesktop.org/"
+depends=('lib32-fontconfig' 'lib32-libxrender')
+makedepends=('gcc-multilib')
+source=(${url}/releases/individual/lib/libXft-${_pkgbasever}.tar.bz2{,.sig})
+sha256sums=('SKIP'
+            'SKIP')
+validpgpkeys=('4A193C06D35E7C670FA4EF0BA2FB9E081F2D130E') # "Alan Coopersmith <alan.coopersmith@oracle.com>"
+
+pkgver() {
+  echo "${_pkgbasever}.r${GITLAB_REVISION}.`echo $COMMIT_ID | cut -c1-8`"
+}
+
+build() {
+  export CC="gcc -m32"
+  export CXX="g++ -m32"
+  export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
+
+  cd ${srcdir}/libXft-${_pkgbasever}
+  ./configure --prefix=/usr \
+    --libdir=/usr/lib32 --disable-static
+  make
+}
+
+package() {
+  cd "${srcdir}/libXft-${_pkgbasever}"
+  make DESTDIR="${pkgdir}" install
+
+  rm -rf "${pkgdir}"/usr/{bin,include,share}
+  mkdir -p "$pkgdir/usr/share/licenses"
+  ln -s $_pkgbasename "$pkgdir/usr/share/licenses/$pkgname"
+}

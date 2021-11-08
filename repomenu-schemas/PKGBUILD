@@ -1,7 +1,7 @@
 # Maintainer: TheRepoClub <TheRepoClub@github.com>
 # Contributor: TheRepoClub <TheRepoClub@github.com>
 pkgname=repomenu-schemas
-pkgver=2021.08.21
+pkgver=2021.10.28
 pkgrel=1
 pkgdesc="schemas for repomenu"
 url="https://github.com/The-Repo-Club/$pkgname"
@@ -12,7 +12,7 @@ provides=("repomenu-schemas=$pkgver")
 depends=('glib2' 'dconf')
 makedepends=('gobject-introspection' 'git' 'meson')
 source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
-sha256sums=('d94d80452a44659db397f80b5a4964a05ee1718981ab7f2e80be782858c959cc')
+sha256sums=('b4c293da1feeffc5286ea914c1d52672da671d71a2bff4fd61d00595b1edeb51')
 
 prepare() {
   cd "$srcdir/$pkgname-$pkgver"

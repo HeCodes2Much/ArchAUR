@@ -1,0 +1,34 @@
+## Set Colors (copied from makepkg)
+if tput setaf 0 >/dev/null; then
+    ALL_OFF="$(tput sgr0)"
+    BOLD=$(tput bold)
+    RED="$(tput setaf 1)"
+    GREEN="$(tput setaf 2)"
+    YELLOW="$(tput setaf 3)"
+    BLUE="$(tput setaf 4)"
+    PURPLE="$(tput setaf 5)"
+    CYAN="$(tput setaf 6)"
+else
+    ALL_OFF="\e[1;0m"
+    BOLD="\[1;1m"
+    RED="\e[1;31m"
+    GREEN="\e[1;32m"
+    YELLOW="\e[1;33m"
+    BLUE="\e[1;34m"
+    PURPLE="\e[1:35m"
+    CYAN="\e[1:36m"
+fi
+COLS="$(tput cols)"
+
+readonly ALL_OFF BOLD RED GREEN YELLOW BLUE PURPLE CYAN COLS
+
+post_install() {
+	if [[ -f /usr/bin/startX ]]; then
+        printf "${RED}${BOLD}PLEASE READ BELOW${ALL_OFF}\n"
+		printf "${GREEN}Add 'exec startX;' to your xinitrc${ALL_OFF}\n"
+	fi
+}
+
+post_upgrade() {
+	post_install
+}

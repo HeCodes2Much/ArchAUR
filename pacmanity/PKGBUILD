@@ -8,15 +8,11 @@ license=('GPL')
 makedepends=('git')
 depends=('pacman>=6.0' 'gist>=4.5.0')
 source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
-sha256sums=('c166064709d0be59e43cba44fdf7de366f10c5881add052730c6a66525fccbe7')
+sha256sums=('64c874b208126a0cf6e28b81b15912dae87010cd48b01c09b20564cd1646e1c5')
 install=${pkgname}.install
 
 package() {
     cd "$pkgname-$pkgver"
-    # Install and save file
-    mkdir -p $pkgdir/etc/
-    touch $pkgdir/etc/pacmanity
-
     # Install script
     mkdir -p $pkgdir/usr/lib/pacmanity
     install -Dm755 pacmanity_update $pkgdir/usr/lib/pacmanity/pacmanity_update

@@ -1,30 +1,33 @@
 pkgname=pacmanity
-pkgver=3.0.1
+pkgver=2021.11.14
 pkgrel=1
 pkgdesc="Keeps a list of installed packages in a Gist at your GitHub account"
 arch=('x86_64')
+url="https://github.com/The-Repo-Club/$pkgname"
 license=('GPL')
 makedepends=('git')
 depends=('pacman>=6.0' 'gist>=4.5.0')
-source=("pacmanity.sh" "pacmanity.hook")
-md5sums=('SKIP' 'SKIP')
+source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
+sha256sums=('c166064709d0be59e43cba44fdf7de366f10c5881add052730c6a66525fccbe7')
+install=${pkgname}.install
 
 package() {
+    cd "$pkgname-$pkgver"
+    # Install and save file
+    mkdir -p $pkgdir/etc/
+    touch $pkgdir/etc/pacmanity
 
-  # Install and save file
-  mkdir -p $pkgdir/etc/
-  touch $pkgdir/etc/pacmanity
+    # Install script
+    mkdir -p $pkgdir/usr/lib/pacmanity
+    install -Dm755 pacmanity_update $pkgdir/usr/lib/pacmanity/pacmanity_update
+    chmod +x $pkgdir/usr/lib/pacmanity/pacmanity_update
 
-  # Install script
-  mkdir -p $pkgdir/usr/lib/pacmanity
-  install -Dm755 $srcdir/pacmanity.sh $pkgdir/usr/lib/pacmanity/pacmanity.sh
-  chmod +x $pkgdir/usr/lib/pacmanity/pacmanity.sh
+    install -Dm755 pacmanity_install $pkgdir/usr/bin/pacmanity_install
+    chmod +x $pkgdir/usr/bin/pacmanity_install
 
-  # Install Hook
-  mkdir -p $pkgdir/usr/share/libalpm/hooks
-  install -Dm755 $srcdir/pacmanity.hook $pkgdir/usr/share/libalpm/hooks/99-pacmanity.hook
+    # Install Hook
+    mkdir -p $pkgdir/usr/share/libalpm/hooks
+    install -Dm755 pacmanity.hook $pkgdir/usr/share/libalpm/hooks/99-pacmanity.hook
 
-  source $pkgdir/usr/lib/pacmanity/pacmanity.sh
-  pacmanity_install
-
+    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.md"
 }

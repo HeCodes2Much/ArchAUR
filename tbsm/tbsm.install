@@ -23,9 +23,9 @@ COLS="$(tput cols)"
 readonly ALL_OFF BOLD RED GREEN YELLOW BLUE PURPLE CYAN COLS
 
 post_install() {
-	if [[ -f /usr/bin/startX ]]; then
+	if [[ -f /usr/bin/tbsm ]]; then
         printf "${RED}${BOLD}PLEASE READ BELOW${ALL_OFF}\n"
-		printf "${GREEN}Add 'exec startX;' to your xinitrc${ALL_OFF}\n"
+		printf "${GREEN}Add 'exec tbsm;' to your xinitrc${ALL_OFF}\n"
 	fi
 }
 

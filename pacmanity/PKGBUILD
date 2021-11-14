@@ -17,12 +17,12 @@ package() {
 
   # Install script
   mkdir -p $pkgdir/usr/lib/pacmanity
-  install -Dm644 $srcdir/pacmanity.sh $pkgdir/usr/lib/pacmanity/pacmanity.sh
+  install -Dm755 $srcdir/pacmanity.sh $pkgdir/usr/lib/pacmanity/pacmanity.sh
   chmod +x $pkgdir/usr/lib/pacmanity/pacmanity.sh
 
   # Install Hook
   mkdir -p $pkgdir/usr/share/libalpm/hooks
-  install -Dm644 $srcdir/pacmanity.hook $pkgdir/usr/share/libalpm/hooks/zzz-pacmanity.hook
+  install -Dm755 $srcdir/pacmanity.hook $pkgdir/usr/share/libalpm/hooks/99-pacmanity.hook
 
   source $pkgdir/usr/lib/pacmanity/pacmanity.sh
   pacmanity_install

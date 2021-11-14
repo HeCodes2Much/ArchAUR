@@ -6,7 +6,7 @@
 project(
   'i3',
   'c',
-    version: '4.19.1',
+  version: '4.20.1',
   default_options: [
     'c_std=c11',
     'warning_level=1',  # enable all warnings (-Wall)
@@ -63,7 +63,7 @@ config_h = declare_dependency(
   sources: vcs_tag(
     input: config_h_in,
     output: 'config.h',
-    fallback: meson.project_version() + ' (2021-02-01)',
+    fallback: meson.project_version() + '-non-git',
   )
 )
 
@@ -223,10 +223,35 @@ if get_option('mans')
       output: '@BASENAME@.1',
       command: [
         xmlto,
+        '--stringparam',
+        'man.th.title.max.length=30',
         'man',
         '-o',
         '@OUTDIR@',
         '@INPUT@',
+      ],
+      # We should use install and install_dir instead of install_man as per:
+      # https://github.com/mesonbuild/meson/issues/4981#issuecomment-467084867
+      # https://github.com/mesonbuild/meson/issues/1550#issuecomment-370164307
+      install: true,
+      install_dir: man1,
+    )
+  endforeach
+
+  pod2man_inputs = [
+    'i3-dmenu-desktop',
+    'i3-save-tree',
+  ]
+  foreach m : pod2man_inputs
+    custom_target(
+      m.underscorify()+'_pod2man',
+      input: m,
+      output: '@BASENAME@.1',
+      command: [
+        pod2man,
+        '--utf8',
+        '@INPUT@',
+        '@OUTPUT@',
       ],
       # We should use install and install_dir instead of install_man as per:
       # https://github.com/mesonbuild/meson/issues/4981#issuecomment-467084867
@@ -245,6 +270,7 @@ else
 	'man/i3-input.1',
 	'man/i3-nagbar.1',
 	'man/i3-dump-log.1',
+	'man/i3-save-tree.1',
       ],
       install_dir: man1,
     )
@@ -288,6 +314,8 @@ ev_dep = cc.find_library('ev')
 inc = include_directories('include')
 
 libi3srcs = [
+  'libi3/boolstr.c',
+  'libi3/create_socket.c',
   'libi3/dpi.c',
   'libi3/draw_util.c',
   'libi3/fake_configure_notify.c',
@@ -304,11 +332,15 @@ libi3srcs = [
   'libi3/ipc_recv_message.c',
   'libi3/ipc_send_message.c',
   'libi3/is_debug_build.c',
+  'libi3/path_exists.c',
   'libi3/resolve_tilde.c',
   'libi3/root_atom_contents.c',
   'libi3/safewrappers.c',
   'libi3/string.c',
   'libi3/ucs2_conversion.c',
+  'libi3/nonblock.c',
+  'libi3/screenshot_wallpaper.c',
+  'libi3/is_background_set.c',
 ]
 
 if not cdata.get('HAVE_STRNDUP')
@@ -452,7 +484,6 @@ meson.add_install_script(
   get_option('bindir'),
 )
 
-
 executable(
   'i3-dump-log',
   'i3-dump-log/main.c',
@@ -562,7 +593,7 @@ if get_option('docs')
       '@OUTPUT@',
     ],
     install: true,
-    install_dir: join_paths(get_option('datadir'), 'doc', 'i3'),
+    install_dir: docdir,
   )
 
   custom_target(
@@ -575,7 +606,7 @@ if get_option('docs')
       '@OUTPUT@',
     ],
     install: true,
-    install_dir: join_paths(get_option('datadir'), 'doc', 'i3'),
+    install_dir: docdir,
   )
 endif
 
@@ -589,7 +620,10 @@ executable(
 
 executable(
   'test.commands_parser',
-  'src/commands_parser.c',
+  [
+    'src/commands_parser.c',
+    command_parser,
+  ],
   include_directories: inc,
   c_args: '-DTEST_PARSER',
   dependencies: common_deps,
@@ -598,7 +632,10 @@ executable(
 
 executable(
   'test.config_parser',
-  'src/config_parser.c',
+  [
+    'src/config_parser.c',
+    config_parser,
+  ],
   include_directories: inc,
   c_args: '-DTEST_PARSER',
   dependencies: common_deps,
@@ -626,6 +663,7 @@ if meson.version().version_compare('>=0.46.0')
       anyevent_i3,
       i3test_pm,
     ],
+    timeout: 120,  # Default of 30 seconds can cause timeouts on slower machines
   )
 else
   # meson < 0.46.0 does not support the depends arg in test targets.

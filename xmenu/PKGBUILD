@@ -1,0 +1,26 @@
+# Maintainer: The-Repo-Club <The-Repo-Club@github.com>
+# Contributor: The-Repo-Club <The-Repo-Club@github.com>
+
+pkgname=xmenu
+pkgver=2021.12.01
+pkgrel=1
+pkgdesc="A menu utility for X."
+arch=('any')
+groups=('therepoclub')
+url="https://github.com/The-Repo-Club/$pkgname"
+license=("MIT")
+depends=("imlib2")
+makedepends=(libxft libxinerama)
+provides=("xmenu")
+source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
+sha256sums=("e2ac5e1f75b7efa5deebd5d676b156167164466cbba4908c768e67611a26131a")
+
+build() {
+	cd "$pkgname-$pkgver"
+	make
+}
+
+package () {
+	cd $pkgname-$pkgver
+	make PREFIX="$pkgdir/usr" install
+}

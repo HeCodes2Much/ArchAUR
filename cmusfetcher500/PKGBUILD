@@ -1,0 +1,24 @@
+# Maintainer: The-Repo-Club <The-Repo-Club@github.com>
+# Contributor: The-Repo-Club <The-Repo-Club@github.com>
+pkgname=cmusfetcher500
+pkgver=2021.12.28
+pkgrel=1
+pkgdesc="A simple tool for fetching an image and sound from cmus"
+arch=('any')
+groups=('therepoclub')
+url="https://github.com/The-Repo-Club/$pkgname"
+license=('GPL3')
+depends=(bash)
+optdepends=(
+    'cava: Display Music Lines'
+    'feh: Display Images'
+)
+source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+package() {
+    cd "$pkgname-$pkgver"
+    install -Dm755 $pkgname "$pkgdir/usr/bin/$pkgname"
+    install -Dm755 $pkgname.desktop "$pkgdir//etc/xdg/autostart$pkgname.desktop"
+    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.md"
+}

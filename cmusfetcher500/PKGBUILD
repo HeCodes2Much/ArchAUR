@@ -14,11 +14,11 @@ optdepends=(
     'feh: Display Images'
 )
 source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
-sha256sums=('SKIP')
+sha256sums=('64e922ec2ea6f919e18e887342c40fabc974941a2bbce89fa10f74658274a3d2')
 
 package() {
     cd "$pkgname-$pkgver"
     install -Dm755 $pkgname "$pkgdir/usr/bin/$pkgname"
-    install -Dm755 $pkgname.desktop "$pkgdir//etc/xdg/autostart$pkgname.desktop"
+    install -Dm755 $pkgname.desktop "$pkgdir/etc/xdg/autostart/$pkgname.desktop"
     install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.md"
 }

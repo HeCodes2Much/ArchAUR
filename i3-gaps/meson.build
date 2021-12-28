@@ -85,7 +85,6 @@ if get_option('docs')
     'docs/multi-monitor',
     'docs/wsbar',
     'docs/testsuite',
-    'docs/i3bar-protocol',
     'docs/layout-saving',
   ]
   foreach m : doc_toc_inputs
@@ -134,7 +133,6 @@ else
 	'docs/multi-monitor.html',
 	'docs/wsbar.html',
 	'docs/testsuite.html',
-	'docs/i3bar-protocol.html',
 	'docs/layout-saving.html',
 	'docs/debugging.html',
       ],
@@ -238,29 +236,6 @@ if get_option('mans')
     )
   endforeach
 
-  pod2man_inputs = [
-    'i3-dmenu-desktop',
-    'i3-save-tree',
-  ]
-  foreach m : pod2man_inputs
-    custom_target(
-      m.underscorify()+'_pod2man',
-      input: m,
-      output: '@BASENAME@.1',
-      command: [
-        pod2man,
-        '--utf8',
-        '@INPUT@',
-        '@OUTPUT@',
-      ],
-      # We should use install and install_dir instead of install_man as per:
-      # https://github.com/mesonbuild/meson/issues/4981#issuecomment-467084867
-      # https://github.com/mesonbuild/meson/issues/1550#issuecomment-370164307
-      install: true,
-      install_dir: man1,
-    )
-  endforeach
-
 else
   if run_command('[', '-f', 'man/i3.1', ']').returncode() == 0
     install_data(
@@ -270,7 +245,6 @@ else
 	'man/i3-input.1',
 	'man/i3-nagbar.1',
 	'man/i3-dump-log.1',
-	'man/i3-save-tree.1',
       ],
       install_dir: man1,
     )

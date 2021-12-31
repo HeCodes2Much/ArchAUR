@@ -1,7 +1,7 @@
 # Maintainer: The-Repo-Club <The-Repo-Club@github.com>
 # Contributor: The-Repo-Club <The-Repo-Club@github.com>
 pkgname=eos-wallpapers
-pkgver=d5109ca
+pkgver=44ce5f5
 pkgrel=1
 pkgdesc="A collection of cool wall papers!"
 arch=('any')

@@ -1,7 +1,9 @@
 # Maintainer: The-Repo-Club <The-Repo-Club@github.com>
 # Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# shellcheck disable=all
+
 pkgname=repowm
-pkgver=2021.08.21
+pkgver=2022.01.22
 pkgrel=1
 pkgdesc="A dynamic window manager for X"
 url="https://github.com/The-Repo-Club/$pkgname"
@@ -11,29 +13,25 @@ license=('MIT')
 options=(zipman)
 depends=('libx11' 'libxinerama' 'libxft' 'freetype2' 'repomenu')
 optdepends=('repowm-schemas: gsettings for repowm'
-        'siji: font used by default'
-        'nerd-fonts-fira-code: font used by default'
-        'adobe-source-code-pro-fonts: font used by default'
-        'ttf-material-design-icons: font used by default'
-        'ttf-remixicon: font used by default')
+    'siji: font used by default'
+    'nerd-fonts-fira-code: font used by default'
+    'adobe-source-code-pro-fonts: font used by default'
+    'ttf-material-design-icons: font used by default'
+    'ttf-remixicon: font used by default')
 install=$pkgname.install
 source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
-sha256sums=('cebe216df810b553c0a51420cc4fa9f61a550ab2fa35523e7ae096b48968a95c')
+sha256sums=('ef87319d74d8e0d4ce25513c8f640473f2016a99fc887fdf93e086a9ff1e5597')
 
 build() {
-  cd "$srcdir/$pkgname-$pkgver"
-  make \
-    X11INC=/usr/include/X11 \
-    X11LIB=/usr/lib/X11 \
-    FREETYPEINC=/usr/include/freetype2
+    cd "$srcdir/$pkgname-$pkgver"
+    make \
+        X11INC=/usr/include/X11 \
+        X11LIB=/usr/lib/X11 \
+        FREETYPEINC=/usr/include/freetype2
 }
 
 package() {
-  cd "$srcdir/$pkgname-$pkgver"
-  make PREFIX=/usr DESTDIR="$pkgdir" install
-  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+    cd "$srcdir/$pkgname-$pkgver"
+    make PREFIX=/usr DESTDIR="$pkgdir" install
+    install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 }
-
-
-
-

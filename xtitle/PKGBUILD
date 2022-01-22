@@ -1,5 +1,6 @@
 # Maintainer: Brian Bidulock <bidulock@openss7.org>
 # Contributor: Bastien Dejean <baskerville@lavabit.com>
+# shellcheck disable=all
 
 pkgname=xtitle
 pkgver=20190826
@@ -16,12 +17,12 @@ source=("$pkgname::git+https://github.com/baskerville/${pkgname}.git")
 md5sums=('SKIP')
 
 build() {
-  cd $pkgname
-  make PREFIX=/usr
+    cd $pkgname
+    make PREFIX=/usr
 }
 
 package() {
-  cd $pkgname
-  make PREFIX=/usr DESTDIR="$pkgdir" install
-  install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    cd $pkgname
+    make PREFIX=/usr DESTDIR="$pkgdir" install
+    install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }

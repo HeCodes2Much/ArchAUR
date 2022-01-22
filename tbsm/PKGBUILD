@@ -1,5 +1,6 @@
 # Maintainer: The-Repo-Club <The-Repo-Club@github.com>
 # Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# shellcheck disable=all
 
 pkgname=tbsm
 pkgver=2021.11.08
@@ -16,7 +17,7 @@ sha256sums=('ae23d94bb23fa37c74e63b0e668bd6d5ca0154ca1095abaf8080df44e58ad3b8')
 install=${pkgname}.install
 
 package() {
-  cd "$pkgname-$pkgver"
-  make DESTDIR="$pkgdir" install
-  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.md"
+    cd "$pkgname-$pkgver"
+    make DESTDIR="$pkgdir" install
+    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.md"
 }

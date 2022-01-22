@@ -1,5 +1,6 @@
 # Maintainer: The-Repo-Club <The-Repo-Club@github.com>
 # Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# shellcheck disable=all
 
 pkgname=therepoclub-mirrorlist
 pkgver=2021.08.22

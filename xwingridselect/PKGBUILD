@@ -1,5 +1,6 @@
-# Maintainer: TheCynicalTeam <TheCynicalTeam@gitlab.com>
-# Contributor: TheCynicalTeam <TheCynicalTeam@gitlab.com>
+# Maintainer: The-Repo-Club <The-Repo-Club@github.com>
+# Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# shellcheck disable=all
 
 pkgname=xwingridselect
 pkgver=2021.04.06
@@ -16,12 +17,12 @@ source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
 sha256sums=('SKIP')
 
 build() {
-  cd "$srcdir/$pkgname-$pkgver"
-  cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DWITH_SCRIPTS=ON "$srcdir/$pkgname-$pkgver"
-  make || return 1
+    cd "$srcdir/$pkgname-$pkgver"
+    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DWITH_SCRIPTS=ON "$srcdir/$pkgname-$pkgver"
+    make || return 1
 }
 
 package() {
-  cd "$srcdir/$pkgname-$pkgver"
-  make DESTDIR="$pkgdir" install
+    cd "$srcdir/$pkgname-$pkgver"
+    make DESTDIR="$pkgdir" install
 }

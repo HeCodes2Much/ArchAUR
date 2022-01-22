@@ -1,5 +1,7 @@
 # Maintainer: The-Repo-Club <The-Repo-Club@github.com>
 # Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# shellcheck disable=all
+
 pkgname=multimonitorlock
 pkgver=2021.08.20
 pkgrel=1
@@ -17,9 +19,9 @@ sha256sums=("8044c18f4505545c2b2466b70ed815c5fb0a5a870e9d867cf090a2eeab80adfa")
 install=${pkgname}.install
 
 package() {
-	cd "$pkgname-$pkgver"
-	install -Dm 755 "$pkgname" "$pkgdir/usr/bin/$pkgname"
-	install -Dm 644 "system/$pkgname@.service" "$pkgdir/usr/lib/systemd/system/$pkgname@.service"
-	install -Dm 644 "examples/config" "$pkgdir/usr/share/doc/$pkgname/examples/config"
-	install -Dm 644 "LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    cd "$pkgname-$pkgver"
+    install -Dm 755 "$pkgname" "$pkgdir/usr/bin/$pkgname"
+    install -Dm 644 "system/$pkgname@.service" "$pkgdir/usr/lib/systemd/system/$pkgname@.service"
+    install -Dm 644 "examples/config" "$pkgdir/usr/share/doc/$pkgname/examples/config"
+    install -Dm 644 "LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }

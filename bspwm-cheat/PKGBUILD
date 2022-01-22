@@ -1,5 +1,7 @@
 # Maintainer: The-Repo-Club <The-Repo-Club@github.com>
 # Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# shellcheck disable=all
+
 _pkgname=wm-cheat
 pkgname=bspwm-cheat
 pkgver=2021.01.17
@@ -14,10 +16,10 @@ source=("${_pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
 sha256sums=('3d37b3d7b672dba63ca581e80f64eca4c91399be569d551b11ae1b90e0aee82d')
 
 package() {
-  mkdir -p $pkgdir/etc
-  cp -a $srcdir/$_pkgname-$pkgver/etc/bspwm-cheat.conf $pkgdir/etc/bspwm-cheat.conf
-  mkdir -p $pkgdir/usr/bin/
-  cp -a $srcdir/$_pkgname-$pkgver/usr/bin/bspwm-cheat $pkgdir/usr/bin/bspwm-cheat
-  mkdir -p $pkgdir/usr/lib
-  cp -a $srcdir/$_pkgname-$pkgver/usr/lib/wm-cheat $pkgdir/usr/lib/wm-cheat
+    mkdir -p $pkgdir/etc
+    cp -a $srcdir/$_pkgname-$pkgver/etc/bspwm-cheat.conf $pkgdir/etc/bspwm-cheat.conf
+    mkdir -p $pkgdir/usr/bin/
+    cp -a $srcdir/$_pkgname-$pkgver/usr/bin/bspwm-cheat $pkgdir/usr/bin/bspwm-cheat
+    mkdir -p $pkgdir/usr/lib
+    cp -a $srcdir/$_pkgname-$pkgver/usr/lib/wm-cheat $pkgdir/usr/lib/wm-cheat
 }

@@ -1,5 +1,6 @@
 # Maintainer: The-Repo-Club <The-Repo-Club@github.com>
 # Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# shellcheck disable=all
 
 pkgname=xmenu
 pkgver=2021.12.01
@@ -16,11 +17,11 @@ source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
 sha256sums=("e2ac5e1f75b7efa5deebd5d676b156167164466cbba4908c768e67611a26131a")
 
 build() {
-	cd "$pkgname-$pkgver"
-	make
+    cd "$pkgname-$pkgver"
+    make
 }
 
-package () {
-	cd $pkgname-$pkgver
-	make PREFIX="$pkgdir/usr" install
+package() {
+    cd $pkgname-$pkgver
+    make PREFIX="$pkgdir/usr" install
 }

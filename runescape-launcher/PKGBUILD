@@ -1,6 +1,7 @@
 # Upstream: RuneScape Linux <noreply@jagex.com>
 # Contributor: Ivan Puntiy <ivan.puntiy-at-gmail>
 # Contributor: Mantas Mikulėnas <grawity@gmail.com>
+# shellcheck disable=all
 
 pkgname=runescape-launcher
 pkgver=2.2.9

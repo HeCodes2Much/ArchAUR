@@ -1,5 +1,6 @@
 # Maintainer: The-Repo-Club <The-Repo-Club@github.com>
 # Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# shellcheck disable=all
 
 pkgname=('dracula-gtk-theme' 'dracula-qt5-theme' 'dracula-qt6-theme' 'dracula-icons')
 pkgbase=themix-dracula
@@ -47,4 +48,3 @@ package_dracula-icons() {
     mkdir -p "${pkgdir}/usr/share/icons/"
     cp -a ".icons/"* "${pkgdir}/usr/share/icons/"
 }
-

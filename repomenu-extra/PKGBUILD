@@ -1,5 +1,7 @@
 # Maintainer: The-Repo-Club <The-Repo-Club@github.com>
 # Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# shellcheck disable=all
+
 pkgname=repomenu-extra
 pkgver=2021.09.23
 pkgrel=1

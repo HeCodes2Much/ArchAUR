@@ -1,5 +1,7 @@
 # Maintainer: The-Repo-Club <The-Repo-Club@github.com>
 # Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# shellcheck disable=all
+
 _pkgname=wm-cheat
 pkgname=i3-cheat
 pkgver=2021.10.25
@@ -14,10 +16,10 @@ source=("${_pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
 sha256sums=('a8af1fbbd3c753b7fefcd0e3b6e858e53d04e4a1e12ea41afe5457783513b35a')
 
 package() {
-  mkdir -p $pkgdir/etc
-  cp -a $srcdir/$_pkgname-$pkgver/etc/i3-cheat.conf $pkgdir/etc/i3-cheat.conf
-  mkdir -p $pkgdir/usr/bin/
-  cp -a $srcdir/$_pkgname-$pkgver/usr/bin/i3-cheat $pkgdir/usr/bin/i3-cheat
-  mkdir -p $pkgdir/usr/lib
-  cp -a $srcdir/$_pkgname-$pkgver/usr/lib/wm-cheat $pkgdir/usr/lib/wm-cheat
+    mkdir -p $pkgdir/etc
+    cp -a $srcdir/$_pkgname-$pkgver/etc/i3-cheat.conf $pkgdir/etc/i3-cheat.conf
+    mkdir -p $pkgdir/usr/bin/
+    cp -a $srcdir/$_pkgname-$pkgver/usr/bin/i3-cheat $pkgdir/usr/bin/i3-cheat
+    mkdir -p $pkgdir/usr/lib
+    cp -a $srcdir/$_pkgname-$pkgver/usr/lib/wm-cheat $pkgdir/usr/lib/wm-cheat
 }

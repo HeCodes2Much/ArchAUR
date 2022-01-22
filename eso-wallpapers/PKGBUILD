@@ -1,5 +1,7 @@
 # Maintainer: The-Repo-Club <The-Repo-Club@github.com>
 # Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# shellcheck disable=all
+
 pkgname=eos-wallpapers
 pkgver=44ce5f5
 pkgrel=1

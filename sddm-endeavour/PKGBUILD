@@ -1,5 +1,7 @@
 # Maintainer: The-Repo-Club <The-Repo-Club@github.com>
 # Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# shellcheck disable=all
+
 pkgname=sddm-endeavour
 pkgver=2021.07.05
 pkgrel=1
@@ -13,7 +15,7 @@ source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
 sha256sums=('SKIP')
 
 package() {
-  cd "${srcdir}/${pkgname}-$pkgver"
-  make DESTDIR="$pkgdir" install
-  install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    cd "${srcdir}/${pkgname}-$pkgver"
+    make DESTDIR="$pkgdir" install
+    install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }

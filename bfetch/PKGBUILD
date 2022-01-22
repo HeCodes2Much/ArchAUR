@@ -1,5 +1,6 @@
 # Maintainer: The-Repo-Club <The-Repo-Club@github.com>
 # Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# shellcheck disable=all
 
 pkgname=bfetch
 pkgver=2022.01.01
@@ -12,23 +13,23 @@ license=('MIT')
 depends=('bash')
 makedepends=('git')
 optdepends=(
-  'catimg: Display Images'
-  'chafa: Image to text support'
-  'feh: Wallpaper Display'
-  'imagemagick: Image cropping / Thumbnail creation / Take a screenshot'
-  'jp2a: Display Images'
-  'libcaca: Display Images'
-  'nitrogen: Wallpaper Display'
-  'w3m: Display Images'
-  'xorg-xdpyinfo: Resolution detection [Single Monitor]'
-  'xorg-xprop: Desktop Environment and Window Manager'
-  'xorg-xrandr: Resolution detection [Multi Monitor + Refresh rates]'
+    'catimg: Display Images'
+    'chafa: Image to text support'
+    'feh: Wallpaper Display'
+    'imagemagick: Image cropping / Thumbnail creation / Take a screenshot'
+    'jp2a: Display Images'
+    'libcaca: Display Images'
+    'nitrogen: Wallpaper Display'
+    'w3m: Display Images'
+    'xorg-xdpyinfo: Resolution detection [Single Monitor]'
+    'xorg-xprop: Desktop Environment and Window Manager'
+    'xorg-xrandr: Resolution detection [Multi Monitor + Refresh rates]'
 )
 source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
 sha256sums=('d4cdcf14ace07f9bb812e7f86894bb7d6b3b3f749e9e34e427592e579508596e')
 
 package() {
-  cd "$pkgname-$pkgver"
-  make DESTDIR="$pkgdir" install
-  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.md"
+    cd "$pkgname-$pkgver"
+    make DESTDIR="$pkgdir" install
+    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.md"
 }

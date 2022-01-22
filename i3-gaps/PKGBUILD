@@ -1,5 +1,6 @@
 # Maintainer: Morten Linderud <foxboron@archlinux.org>
 # Contributor: Ingo Bürk <admin at airblader dot de>
+# shellcheck disable=all
 
 pkgname=i3-gaps
 pkgver=4.20.1
@@ -12,34 +13,34 @@ provides=('i3-wm')
 conflicts=('i3-wm')
 groups=('i3')
 depends=('xcb-util-keysyms' 'xcb-util-wm' 'libev' 'yajl'
-         'startup-notification' 'pango' 'perl' 'xcb-util-cursor' 'xcb-util-xrm'
-         'libxkbcommon-x11')
+    'startup-notification' 'pango' 'perl' 'xcb-util-cursor' 'xcb-util-xrm'
+    'libxkbcommon-x11')
 makedepends=('bison' 'flex' 'asciidoc' 'xmlto' 'meson')
 optdepends=('rxvt-unicode: The terminal emulator used in the default config.'
-            'dmenu: As menu.'
-            'i3lock: For locking your screen.'
-            'i3status: To display system information with a bar.'
-            'perl-json-xs: For i3-save-tree'
-            'perl-anyevent-i3: For i3-save-tree')
+    'dmenu: As menu.'
+    'i3lock: For locking your screen.'
+    'i3status: To display system information with a bar.'
+    'perl-json-xs: For i3-save-tree'
+    'perl-anyevent-i3: For i3-save-tree')
 backup=(etc/i3/config)
 options=('docs')
 source=("${pkgname}-${pkgver}.tar.gz::https://github.com/Airblader/i3/archive/${pkgver}.tar.gz" "meson.build")
 sha256sums=('717f2499e1c6eb5c04e5c6d30442234387181e2b731366274b40bbf682f93d95' 'SKIP')
 
 build() {
-  cp -rf meson.build i3-${pkgver}/meson.build
-  cd "i3-${pkgver}"
-  arch-meson \
-    -Ddocs=true \
-    -Dmans=true \
-  ../build
-  meson compile -C ../build
+    cp -rf meson.build i3-${pkgver}/meson.build
+    cd "i3-${pkgver}"
+    arch-meson \
+        -Ddocs=true \
+        -Dmans=true \
+        ../build
+    meson compile -C ../build
 }
 
 package() {
-  cd "i3-${pkgver}"
-  DESTDIR="$pkgdir" meson install -C ../build
-  install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 LICENSE
+    cd "i3-${pkgver}"
+    DESTDIR="$pkgdir" meson install -C ../build
+    install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 LICENSE
 }
 
 # vim:set ts=2 sw=2 et:

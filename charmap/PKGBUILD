@@ -1,5 +1,7 @@
 # Maintainer: The-Repo-Club <The-Repo-Club@github.com>
 # Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# shellcheck disable=all
+
 pkgname=charmap
 pkgver=2021.02.08
 pkgrel=1
@@ -13,8 +15,8 @@ source=("${pkgname}-$pkgver.tar.gz::${url}/releases/download/$pkgver/$pkgname.ta
 sha256sums=('c03741e98bb1aafd39581446e6a9794c922803d8d1372f43f5e7a7b5e72434aa')
 
 package() {
-  mkdir -p $pkgdir/usr/bin/
-  cp -a $srcdir/usr/bin/charmap $pkgdir/usr/bin/charmap
-  mkdir -p $pkgdir/usr/lib
-  cp -a $srcdir/usr/lib/charmap $pkgdir/usr/lib/charmap
+    mkdir -p $pkgdir/usr/bin/
+    cp -a $srcdir/usr/bin/charmap $pkgdir/usr/bin/charmap
+    mkdir -p $pkgdir/usr/lib
+    cp -a $srcdir/usr/lib/charmap $pkgdir/usr/lib/charmap
 }

@@ -1,5 +1,7 @@
 # Maintainer: The-Repo-Club <The-Repo-Club@github.com>
 # Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# shellcheck disable=all
+
 pkgname=i3-session
 pkgver=2021.01.01
 pkgrel=1
@@ -14,7 +16,7 @@ source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
 sha256sums=('0b097e5010ef03e2e8e9ab119b01755f0dbb0406ae0ec0ff1c3136c71d7e497c')
 
 package() {
-  cd "$srcdir/$pkgname-$pkgver"
-  sed -i '1 s:/python:/env python3:' "$pkgname"
-  install -Dm755 $pkgname "$pkgdir/usr/bin/$pkgname"
+    cd "$srcdir/$pkgname-$pkgver"
+    sed -i '1 s:/python:/env python3:' "$pkgname"
+    install -Dm755 $pkgname "$pkgdir/usr/bin/$pkgname"
 }

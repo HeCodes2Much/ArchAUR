@@ -1,5 +1,7 @@
 # Maintainer: The-Repo-Club <The-Repo-Club@github.com>
 # Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# shellcheck disable=all
+
 pkgname=win-shot
 pkgver=2021.10.10
 pkgrel=1
@@ -14,6 +16,6 @@ source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
 sha256sums=('0f722bdee5b44c34feb82e3844a1aebf86624726e95c06e986c890bf93a01d5d')
 
 package() {
-  mkdir -p $pkgdir/usr
-  cp -a $srcdir/$pkgname-$pkgver/usr/bin $pkgdir/usr/bin
+    mkdir -p $pkgdir/usr
+    cp -a $srcdir/$pkgname-$pkgver/usr/bin $pkgdir/usr/bin
 }

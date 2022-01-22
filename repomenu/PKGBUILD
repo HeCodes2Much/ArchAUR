@@ -1,5 +1,7 @@
 # Maintainer: The-Repo-Club <The-Repo-Club@github.com>
 # Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# shellcheck disable=all
+
 pkgname=repomenu
 pkgver=2021.08.25
 pkgrel=1
@@ -10,12 +12,12 @@ groups=('therepoclub')
 license=('MIT')
 depends=('python' 'libxinerama' 'libxft')
 optdepends=('repomenu-extra: Extra script that repomenu can use'
-        'repomenu-schemas: gsettings for repomenu'
-        'siji: font used by default'
-        'nerd-fonts-fira-code: font used by default'
-        'adobe-source-code-pro-fonts: font used by default'
-        'ttf-material-design-icons: font used by default'
-        'ttf-remixicon: font used by default')
+    'repomenu-schemas: gsettings for repomenu'
+    'siji: font used by default'
+    'nerd-fonts-fira-code: font used by default'
+    'adobe-source-code-pro-fonts: font used by default'
+    'ttf-material-design-icons: font used by default'
+    'ttf-remixicon: font used by default')
 provides=($pkgname dmenu)
 conflicts=(dmenu)
 replaces=(dmenu)

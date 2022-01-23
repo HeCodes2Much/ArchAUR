@@ -3,7 +3,7 @@
 # shellcheck disable=all
 
 pkgname=tbsm
-pkgver=2021.11.08
+pkgver=2022.01.23
 pkgrel=1
 pkgdesc="Terminal Based Session Manager"
 arch=('any')
@@ -13,7 +13,7 @@ license=('GPL3')
 depends=('bash')
 makedepends=('git')
 source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
-sha256sums=('ae23d94bb23fa37c74e63b0e668bd6d5ca0154ca1095abaf8080df44e58ad3b8')
+sha256sums=('bc893bf637f04415f9b456abec359c5245a7705f7739cd2929712faad4b2194b')
 install=${pkgname}.install
 
 package() {

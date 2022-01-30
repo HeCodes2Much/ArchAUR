@@ -1,0 +1,26 @@
+# Maintainer: The-Repo-Club <The-Repo-Club@github.com>
+# Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# shellcheck disable=all
+
+pkgname=xroot
+pkgver=2022.01.30
+pkgrel=1
+pkgdesc="click on root window and run a command ."
+arch=('any')
+groups=('therepoclub')
+url="https://github.com/The-Repo-Club/$pkgname"
+license=("MIT")
+depends=("libx11")
+provides=("xroot")
+source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
+sha256sums=("SKIP")
+
+build() {
+    cd "$pkgname-$pkgver"
+    make
+}
+
+package() {
+    cd $pkgname-$pkgver
+    make PREFIX="$pkgdir/usr" install
+}

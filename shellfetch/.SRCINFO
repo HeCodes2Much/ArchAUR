@@ -1,0 +1,15 @@
+pkgbase = shellfetch
+	pkgdesc = Shell System Information Fetcher
+	pkgver = 2022.02.16
+	pkgrel = 1
+	url = https://github.com/The-Repo-Club/shellfetch
+	arch = any
+	groups = therepoclub
+	license = MIT
+	makedepends = git
+	depends = bash
+	depends = xorg-xrandr
+	source = shellfetch-2022.02.16.tar.gz::https://github.com/The-Repo-Club/shellfetch/archive/2022.02.16.tar.gz
+	sha256sums = ef6868e942e373fb9389660037040f06649f89503b205bc1d6c453bac156ab68
+
+pkgname = shellfetch

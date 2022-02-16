@@ -9,11 +9,11 @@ pkgdesc="Shell System Information Fetcher"
 arch=('any')
 groups=('therepoclub')
 url="https://github.com/The-Repo-Club/$pkgname"
-license=('MIT')
-depends=('bash' 'xorg-xrandr')
+license=('GPL-TRC')
+depends=('bash' 'xorg-xrandr' 'figlet')
 makedepends=('git')
 source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
-sha256sums=('ef6868e942e373fb9389660037040f06649f89503b205bc1d6c453bac156ab68')
+sha256sums=('c0d3e4437b25195e9e40451596d92964809e26a49c955edc441cb5efb9337b3d')
 
 package() {
     cd "$pkgname-$pkgver"

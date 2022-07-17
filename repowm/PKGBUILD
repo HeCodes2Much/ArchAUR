@@ -3,7 +3,7 @@
 # shellcheck disable=all
 
 pkgname=repowm
-pkgver=2022.07.08
+pkgver=2022.07.17
 pkgrel=1
 pkgdesc="A dynamic window manager for X"
 url="https://github.com/The-Repo-Club/$pkgname"
@@ -12,7 +12,7 @@ groups=('therepoclub')
 license=('MIT')
 options=(zipman)
 depends=('libx11' 'libxinerama' 'libxft' 'freetype2' 'repomenu')
-optdepends=('repowm-schemas: gsettings for repowm'
+optdepends=('repo-exec: exec for repowm'
   'siji: font used by default'
   'nerd-fonts-fira-code: font used by default'
   'adobe-source-code-pro-fonts: font used by default'
@@ -20,7 +20,7 @@ optdepends=('repowm-schemas: gsettings for repowm'
   'ttf-remixicon: font used by default')
 install=$pkgname.install
 source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
-sha256sums=('5ddce68c8a34ffcffcda5c2975a1a7ce4cfb1d0408b8eda6032d8e3dfee17c89')
+sha256sums=('1c69cf32c8929c1c6e0c1ce4130854811c1053e8d1bb2c2a3ed165b28d7cd412')
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
@@ -32,6 +32,6 @@ build() {
 
 package() {
   cd "$srcdir/$pkgname-$pkgver"
-  make PREFIX=/usr DESTDIR="$pkgdir" install
+  make DESTDIR="$pkgdir" install
   install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 }

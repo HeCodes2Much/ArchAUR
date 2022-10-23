@@ -3,12 +3,12 @@
 # shellcheck disable=all
 
 pkgname=repomenu
-pkgver=2021.08.25
+pkgver=2022.07.31
 pkgrel=1
 pkgdesc="dmenu like menu with the Dracula theme"
 url="https://github.com/The-Repo-Club/$pkgname"
 arch=('any')
-groups=('therepoclub')
+groups=('linuxrepos')
 license=('MIT')
 depends=('python' 'libxinerama' 'libxft')
 optdepends=('repomenu-extra: Extra script that repomenu can use'
@@ -18,11 +18,11 @@ optdepends=('repomenu-extra: Extra script that repomenu can use'
   'adobe-source-code-pro-fonts: font used by default'
   'ttf-material-design-icons: font used by default'
   'ttf-remixicon: font used by default')
-provides=($pkgname dmenu)
-conflicts=(dmenu)
-replaces=(dmenu)
+provides=($pkgname 'dmenu')
+conflicts=('dmenu')
+replaces=('dmenu')
 source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
-sha256sums=('29716d9d96a62fe2bd60d5f0459238ed9d4835d2efa7836dd2f07ce64ea01746')
+sha256sums=('dac32f5e33cd53cea298ed131000b7cc6e2cb706ab4d4627db9f5130e6734165')
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"

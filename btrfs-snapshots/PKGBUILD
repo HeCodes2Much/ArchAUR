@@ -3,35 +3,20 @@
 # shellcheck disable=all
 
 pkgname=btrfs-snapshots
-pkgver=2021.09.23
+pkgver=2022.07.31
 pkgrel=1
 pkgdesc="addons for repomenu"
 url="https://github.com/The-Repo-Club/$pkgname"
 arch=('any')
-groups=('therepoclub')
+groups=('linuxrepos')
 license=('GPL3')
-depends=('bash')
-makedepends=('meson')
+depends=('bash' 'jq')
 provides=($pkgname)
 source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
-sha256sums=('af5df3e8f49ac204c4d5d55f2530d416baa433c5d8cebee719101331761b7603')
-
-prepare() {
-    cd "$srcdir/$pkgname-$pkgver"
-}
-
-build() {
-    arch-meson $srcdir/$pkgname-$pkgver build
-    ninja -C build
-}
-
-check() {
-    meson test -C build
-}
+sha256sums=('b27aff74b18960af61db94c0853a965e3939622c47301ad138ac698782a6fffb')
 
 package() {
-    DESTDIR="$pkgdir" meson install -C build
-    cd "$srcdir/$pkgname-$pkgver"
-    make PREFIX=/usr DESTDIR="$pkgdir" install
-    install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+  cd "$srcdir/$pkgname-$pkgver"
+  make DESTDIR="$pkgdir" install
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 }

@@ -3,17 +3,17 @@
 # shellcheck disable=all
 
 pkgname=win-shot
-pkgver=2021.10.10
+pkgver=2022.07.31
 pkgrel=1
 pkgdesc="simple screenshot script using imagemagick"
 arch=('any')
-groups=('therepoclub')
+groups=('linuxrepos')
 url="https://github.com/The-Repo-Club/$pkgname"
 license=('GPL3')
 depends=('libnotify' 'imagemagick' 'xdg-user-dirs' 'xdotool')
 optdepends=('xclip: Allow screenshots to be saved to clipboard')
 source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
-sha256sums=('0f722bdee5b44c34feb82e3844a1aebf86624726e95c06e986c890bf93a01d5d')
+sha256sums=('d16aa65d211c78035f845d1e96ce9c2571ba6282280f5404819edf88afed64b9')
 
 package() {
     mkdir -p $pkgdir/usr

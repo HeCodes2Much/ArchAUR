@@ -3,18 +3,18 @@
 # shellcheck disable=all
 
 pkgname=repomenu-extra
-pkgver=2022.07.17
+pkgver=2022.07.31
 pkgrel=1
 pkgdesc="addons for repomenu"
 url="https://github.com/The-Repo-Club/$pkgname"
 arch=('any')
-groups=('therepoclub')
+groups=('linuxrepos')
 license=('GPL3')
-depends=('bash' 'glib2' 'autorandr' 'repomenu' 'repo-exec' 'networkmanager')
-optdepends=('cutycapt: Taking screenshots with bm command.' 'pacaur: Using the aur with pacman script.' 'ffmpeg: music script depends on this.' 'btrfs-snapshots: Scripts that are for the btrfs menu.')
+depends=('bash' 'glib2' 'autorandr' 'networkmanager')
+optdepends=('cutycapt: Taking screenshots with bm command.' 'pacaur: Using the aur with pacman script.' 'ffmpeg: music script depends on this.' 'btrfs-snapshots: Scripts that are for the btrfs menu.' 'repomenu' 'repo-exec')
 provides=($pkgname)
 source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
-sha256sums=('3b2e5bc934971ae2a9b0bc569de0a598fee7757cba7991c69f62199269bd123b')
+sha256sums=('df8f44b7054e1c549e1b98e9e9fe46cfa333bb4a32d0e5901fc45438274bc643')
 
 package() {
   cd "$srcdir/$pkgname-$pkgver"

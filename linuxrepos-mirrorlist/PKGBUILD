@@ -2,18 +2,18 @@
 # Contributor: The-Repo-Club <The-Repo-Club@github.com>
 # shellcheck disable=all
 
-pkgname=therepoclub-mirrorlist
-pkgver=2021.08.22
+pkgname=linuxrepos-mirrorlist
+pkgver=2022.09.09
 pkgrel=1
-pkgdesc="TheRepoClub mirrorlist"
+pkgdesc="linuxrepos mirrorlist"
 arch=('any')
-groups=('therepoclub')
+groups=('linuxrepos')
 url="https://github.com/ArchAUR/$pkgname"
 license=('GPL3')
 options=(!strip !emptydirs)
 backup=("etc/pacman.d/$pkgname")
 source=("$pkgname")
-sha256sums=('SKIP')
+sha256sums=('cda7cbf8869e5bb25c1d2a3abbd7858aec8dd790f674cfd7450b5f56f6a2a216')
 
 package() {
     install -Dm644 "$srcdir/$pkgname" "$pkgdir/etc/pacman.d/$pkgname"

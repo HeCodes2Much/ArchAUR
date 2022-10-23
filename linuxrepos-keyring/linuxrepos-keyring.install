@@ -1,0 +1,17 @@
+post_install() {
+	pacman-key --init
+  pacman-key --keyserver hkp://pgp.net.nz --recv-key BFC53564DA0DD9E5D02D0B409F12B9FF50E52583
+  pacman-key --keyserver hkp://pgp.net.nz --lsign-key BFC53564DA0DD9E5D02D0B409F12B9FF50E52583
+
+  pacman-key --keyserver hkp://pgp.net.nz --recv-key 10DF44ACD4C8453953B7CCBA206ADED66160901B
+  pacman-key --keyserver hkp://pgp.net.nz --lsign-key 10DF44ACD4C8453953B7CCBA206ADED66160901B
+
+	pacman-key --keyserver hkp://pgp.net.nz --recv-key 75A38DC684F1A0B808918BCEE30EC2FBFB05C44F
+  pacman-key --keyserver hkp://pgp.net.nz --lsign-key 75A38DC684F1A0B808918BCEE30EC2FBFB05C44F
+	pacman-key --populate
+}
+
+post_upgrade() {
+        post_install
+}
+# -*- mode: bash;-*-

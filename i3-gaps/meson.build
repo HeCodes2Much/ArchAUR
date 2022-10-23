@@ -6,7 +6,7 @@
 project(
   'i3',
   'c',
-  version: '4.20.1',
+  version: '4.21',
   default_options: [
     'c_std=c11',
     'warning_level=1',  # enable all warnings (-Wall)
@@ -197,6 +197,7 @@ if get_option('mans')
     'man/i3-msg.man',
     'man/i3-input.man',
     'man/i3-nagbar.man',
+    'man/i3-config-wizard.man',
     'man/i3-dump-log.man',
   ]
 
@@ -236,6 +237,28 @@ if get_option('mans')
     )
   endforeach
 
+  pod2man_inputs = [
+    'i3-save-tree',
+  ]
+  foreach m : pod2man_inputs
+    custom_target(
+      m.underscorify()+'_pod2man',
+      input: m,
+      output: '@BASENAME@.1',
+      command: [
+        pod2man,
+        '--utf8',
+        '@INPUT@',
+        '@OUTPUT@',
+      ],
+      # We should use install and install_dir instead of install_man as per:
+      # https://github.com/mesonbuild/meson/issues/4981#issuecomment-467084867
+      # https://github.com/mesonbuild/meson/issues/1550#issuecomment-370164307
+      install: true,
+      install_dir: man1,
+    )
+  endforeach
+
 else
   if run_command('[', '-f', 'man/i3.1', ']').returncode() == 0
     install_data(
@@ -244,7 +267,9 @@ else
 	'man/i3-msg.1',
 	'man/i3-input.1',
 	'man/i3-nagbar.1',
+	'man/i3-config-wizard.1',
 	'man/i3-dump-log.1',
+	'man/i3-save-tree.1',
       ],
       install_dir: man1,
     )
@@ -277,7 +302,7 @@ xcb_util_xrm_dep = dependency('xcb-xrm', method: 'pkg-config')
 xkbcommon_dep = dependency('xkbcommon', method: 'pkg-config')
 xkbcommon_x11_dep = dependency('xkbcommon-x11', method: 'pkg-config')
 yajl_dep = dependency('yajl', method: 'pkg-config')
-libpcre_dep = dependency('libpcre', version: '>=8.10', method: 'pkg-config')
+libpcre_dep = dependency('libpcre2-8', version: '>=10', method: 'pkg-config')
 cairo_dep = dependency('cairo', version: '>=1.14.4', method: 'pkg-config')
 pangocairo_dep = dependency('pangocairo', method: 'pkg-config')
 glib_dep = dependency('glib-2.0', method: 'pkg-config')
@@ -370,6 +395,7 @@ i3srcs = [
   'src/sighandler.c',
   'src/startup.c',
   'src/sync.c',
+  'src/tiling_drag.c',
   'src/tree.c',
   'src/util.c',
   'src/version.c',
@@ -459,6 +485,20 @@ meson.add_install_script(
 )
 
 executable(
+  'i3-config-wizard',
+  [
+    'i3-config-wizard/i3-config-wizard-atoms.xmacro.h',
+    'i3-config-wizard/main.c',
+    'i3-config-wizard/xcb.h',
+    config_parser,
+  ],
+  install: true,
+  include_directories: include_directories('include', 'i3-config-wizard'),
+  dependencies: common_deps,
+  link_with: libi3,
+)
+
+executable(
   'i3-dump-log',
   'i3-dump-log/main.c',
   install: true,
@@ -500,6 +540,13 @@ executable(
   include_directories: include_directories('include', 'i3-nagbar'),
   dependencies: common_deps,
   link_with: libi3,
+)
+
+install_data(
+  [
+    'i3-save-tree',
+  ],
+  install_dir: 'bin',
 )
 
 install_subdir(

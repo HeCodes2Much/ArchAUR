@@ -1,0 +1,15 @@
+# Maintainer: The-Repo-Club <The-Repo-Club@github.com>
+# Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# shellcheck disable=all
+
+pkgname=linuxrepos-keyring
+pkgver=2022.09.09
+pkgrel=1
+pkgdesc="linuxrepos keyring"
+arch=('any')
+groups=('linuxrepos')
+url="https://github.com/ArchAUR/$pkgname"
+license=('GPL3')
+source=("${pkgname}.install")
+sha256sums=('9d8d890a90ddac269007710af5ab121d4d7df7f13f8cac2f4f4dc8d70c736e9c')
+install=${pkgname}.install

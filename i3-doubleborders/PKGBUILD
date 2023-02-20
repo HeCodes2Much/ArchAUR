@@ -27,6 +27,7 @@ optdepends=('dmenu: for the default program launcher'
             'perl-json-xs: for i3-save-tree')
 replaces=('i3' 'i3bar' 'i3-gaps')
 provides=('i3-wm')
+conflicts=('i3-wm')
 backup=('etc/i3/config')
 source=("$url/downloads/i3-$pkgver.tar.xz"{,.asc}
         "https://github.com/orestisfl/i3/commit/c305798d42.patch"

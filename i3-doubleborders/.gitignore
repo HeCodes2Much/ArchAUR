@@ -6,6 +6,4 @@
 !PKGBUILD
 !.SRCINFO
 !LICENSE
-!*.install
-!meson.build
 # etc...

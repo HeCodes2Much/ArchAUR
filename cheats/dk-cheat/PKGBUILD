@@ -1,0 +1,25 @@
+# Maintainer: The-Repo-Club <The-Repo-Club@github.com>
+# Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# shellcheck disable=all
+
+_pkgname=wm-cheat
+pkgname=dk-cheat
+pkgver=2023.04.23
+pkgrel=1
+pkgdesc="cheat sheet for dkwm"
+arch=('any')
+groups=('linuxrepos')
+url="https://github.com/The-Repo-Club/$_pkgname"
+license=('GPL3')
+depends=('gtk3' 'dk')
+source=("${_pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
+sha256sums=('372caea956fccab457af0a42875fba61c9c1fb2a8f91250d3812866a644960bb')
+
+package() {
+    mkdir -p $pkgdir/etc
+    cp -a $srcdir/$_pkgname-$pkgver/etc/dk-cheat.conf $pkgdir/etc/dk-cheat.conf
+    mkdir -p $pkgdir/usr/bin/
+    cp -a $srcdir/$_pkgname-$pkgver/usr/bin/dk-cheat $pkgdir/usr/bin/dk-cheat
+    mkdir -p $pkgdir/usr/lib
+    cp -a $srcdir/$_pkgname-$pkgver/usr/lib/wm-cheat $pkgdir/usr/lib/wm-cheat
+}

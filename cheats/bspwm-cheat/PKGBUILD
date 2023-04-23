@@ -4,16 +4,16 @@
 
 _pkgname=wm-cheat
 pkgname=bspwm-cheat
-pkgver=2022.01.23
+pkgver=2023.04.23
 pkgrel=1
 pkgdesc="cheat sheet for bspwm"
 arch=('any')
 groups=('linuxrepos')
 url="https://github.com/The-Repo-Club/$_pkgname"
-license=('CC BY-NC-SA 4.0')
+license=('GPL3')
 depends=('gtk3' 'bspwm' 'sxhkd')
 source=("${_pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
-sha256sums=('4497f19731e070cee1dbd6425aabac3816e4d2c4b553d0b66959502477b87651')
+sha256sums=('372caea956fccab457af0a42875fba61c9c1fb2a8f91250d3812866a644960bb')
 
 package() {
     mkdir -p $pkgdir/etc

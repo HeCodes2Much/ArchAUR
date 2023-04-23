@@ -1,0 +1,14 @@
+pkgbase = dk-cheat
+	pkgdesc = cheat sheet for dkwm
+	pkgver = 2023.04.23
+	pkgrel = 1
+	url = https://github.com/The-Repo-Club/wm-cheat
+	arch = any
+	groups = linuxrepos
+	license = GPL3
+	depends = gtk3
+	depends = dk
+	source = wm-cheat-2023.04.23.tar.gz::https://github.com/The-Repo-Club/wm-cheat/archive/2023.04.23.tar.gz
+	sha256sums = 372caea956fccab457af0a42875fba61c9c1fb2a8f91250d3812866a644960bb
+
+pkgname = dk-cheat

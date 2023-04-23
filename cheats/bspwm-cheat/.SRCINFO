@@ -9,6 +9,8 @@ pkgbase = bspwm-cheat
 	depends = gtk3
 	depends = bspwm
 	depends = sxhkd
+	conflicts = dk-cheat
+	conflicts = i3-cheat
 	source = wm-cheat-2023.04.23.tar.gz::https://github.com/The-Repo-Club/wm-cheat/archive/2023.04.23.tar.gz
 	sha256sums = 372caea956fccab457af0a42875fba61c9c1fb2a8f91250d3812866a644960bb
 

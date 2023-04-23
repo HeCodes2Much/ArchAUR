@@ -12,6 +12,7 @@ groups=('linuxrepos')
 url="https://github.com/The-Repo-Club/$_pkgname"
 license=('GPL3')
 depends=('gtk3' 'dk')
+conflicts=('i3-cheat' 'bspwm-cheat')
 source=("${_pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
 sha256sums=('372caea956fccab457af0a42875fba61c9c1fb2a8f91250d3812866a644960bb')
 

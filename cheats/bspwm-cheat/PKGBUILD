@@ -4,7 +4,7 @@
 
 _pkgname=wm-cheat
 pkgname=bspwm-cheat
-pkgver=2023.04.23
+pkgver=2023.04.24
 pkgrel=1
 pkgdesc="cheat sheet for bspwm"
 arch=('any')
@@ -14,7 +14,7 @@ license=('GPL3')
 depends=('gtk3' 'bspwm' 'sxhkd')
 conflicts=('dk-cheat' 'i3-cheat')
 source=("${_pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
-sha256sums=('372caea956fccab457af0a42875fba61c9c1fb2a8f91250d3812866a644960bb')
+sha256sums=('33e2e41f74ac55f07597290189c8668d24f00995afa056ba0de338bebdf7842b')
 
 package() {
     mkdir -p $pkgdir/etc

@@ -3,7 +3,7 @@
 # shellcheck disable=all
 
 pkgname=repowm
-pkgver=2022.07.17
+pkgver=2023.08.06
 pkgrel=1
 pkgdesc="A dynamic window manager for X"
 url="https://github.com/The-Repo-Club/$pkgname"
@@ -11,8 +11,9 @@ arch=('i686' 'x86_64')
 groups=('linuxrepos')
 license=('MIT')
 options=(zipman)
-depends=('libx11' 'libxinerama' 'libxft' 'freetype2' 'repomenu')
+depends=('libx11' 'libxinerama' 'libxft' 'freetype2')
 optdepends=('repo-exec: exec for repowm'
+  'rofi: for the menu scripts'
   'siji: font used by default'
   'nerd-fonts-fira-code: font used by default'
   'adobe-source-code-pro-fonts: font used by default'
@@ -20,7 +21,7 @@ optdepends=('repo-exec: exec for repowm'
   'ttf-remixicon: font used by default')
 install=$pkgname.install
 source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
-sha256sums=('1c69cf32c8929c1c6e0c1ce4130854811c1053e8d1bb2c2a3ed165b28d7cd412')
+sha256sums=('a09e8b1bbb9b0cbdcb9aaa231184796e8368d1fb426b569d7041fe21e244e6e5')
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"

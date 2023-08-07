@@ -3,7 +3,7 @@
 # shellcheck disable=all
 
 pkgname=xroot
-pkgver=2022.01.30
+pkgver=2023.08.07
 pkgrel=1
 pkgdesc="click on root window and run a command ."
 arch=('any')
@@ -13,7 +13,7 @@ license=("MIT")
 depends=("libx11")
 provides=("xroot")
 source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
-sha256sums=("SKIP")
+sha256sums=("404f3fcb708efdad0069930b714f844fd0b980cc7daa9c99041f59697730f8d9")
 
 build() {
     cd "$pkgname-$pkgver"

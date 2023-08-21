@@ -1,0 +1,4 @@
+post_install() {
+  echo "-- Edit config.h in repowm's PKGBUILD directory (generally /var/abs/community/flexiflow/)"
+  echo "-- and rebuild package if you want to change settings."
+}

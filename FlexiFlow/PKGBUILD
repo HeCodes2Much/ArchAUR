@@ -1,0 +1,34 @@
+# Maintainer: The-Repo-Club <The-Repo-Club@github.com>
+# Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# shellcheck disable=all
+
+_pkgname=FlexiFlow
+pkgname=flexiflow
+pkgver=2023.08.21
+pkgrel=1
+pkgdesc="A dynamic window manager for X"
+url="https://github.com/The-Repo-Club/$pkgname"
+arch=('i686' 'x86_64')
+groups=('linuxrepos')
+license=('MIT')
+options=(zipman)
+depends=('libx11' 'libxinerama' 'libxft' 'freetype2')
+optdepends=('rofi: for the menu scripts'
+  'ttf-hack-nerd: font used by default')
+install=$pkgname.install
+source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+build() {
+  cd "$srcdir/$_pkgname-$pkgver"
+  make \
+    X11INC=/usr/include/X11 \
+    X11LIB=/usr/lib/X11 \
+    FREETYPEINC=/usr/include/freetype2
+}
+
+package() {
+  cd "$srcdir/$_pkgname-$pkgver"
+  make DESTDIR="$pkgdir" install
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}

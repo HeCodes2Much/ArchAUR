@@ -1,5 +1,5 @@
-# Maintainer: The-Repo-Club <The-Repo-Club@github.com>
-# Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# Maintainer: HeCodes2Much <HeCodes2Much@github.com>
+# Contributor: HeCodes2Much <HeCodes2Much@github.com>
 # shellcheck disable=all
 
 pkgname=multimonitorlock
@@ -8,7 +8,7 @@ pkgrel=1
 pkgdesc="A simple lock script for i3lock-color"
 arch=('any')
 groups=('linuxrepos')
-url="https://github.com/The-Repo-Club/${pkgname}"
+url="https://github.com/HeCodes2Much/${pkgname}"
 license=('GPL3')
 depends=('i3lock-color' 'imagemagick' 'xorg-xrandr' 'xorg-xdpyinfo' 'bc' 'bash')
 optdepends=('feh: Allows setting wallpaper' 'multimonitorlock-gui: Allows the background to be changed')

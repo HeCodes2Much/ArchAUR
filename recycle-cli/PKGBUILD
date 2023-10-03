@@ -1,5 +1,5 @@
-# Maintainer: The-Repo-Club <The-Repo-Club@github.com>
-# Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# Maintainer: HeCodes2Much <HeCodes2Much@github.com>
+# Contributor: HeCodes2Much <HeCodes2Much@github.com>
 # shellcheck disable=all
 
 pkgname=recycle-cli
@@ -8,7 +8,7 @@ pkgrel=1
 pkgdesc='A recycle bin cli in python 3'
 arch=('any')
 groups=('linuxrepos')
-url="https://github.com/The-Repo-Club/recycle-cli/"
+url="https://github.com/HeCodes2Much/recycle-cli/"
 license=('CC BY-NC-SA 4.0')
 depends=('coreutils' 'gettext' 'python>=3.4')
 source=("${pkgname}-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")

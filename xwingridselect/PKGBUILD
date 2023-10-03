@@ -1,12 +1,12 @@
-# Maintainer: The-Repo-Club <The-Repo-Club@github.com>
-# Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# Maintainer: HeCodes2Much <HeCodes2Much@github.com>
+# Contributor: HeCodes2Much <HeCodes2Much@github.com>
 # shellcheck disable=all
 
 pkgname=xwingridselect
 pkgver=2021.04.06
 pkgrel=1
 pkgdesc="X11 window switcher with fancy look"
-url="https://github.com/The-Repo-Club/$pkgname"
+url="https://github.com/HeCodes2Much/$pkgname"
 arch=('any')
 license=('CC BY-NC-SA 4.0')
 depends=('gtk2' 'gtk-engines' 'gtk-engine-murrine')

@@ -1,5 +1,5 @@
-# Maintainer: The-Repo-Club <The-Repo-Club@github.com>
-# Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# Maintainer: HeCodes2Much <HeCodes2Much@github.com>
+# Contributor: HeCodes2Much <HeCodes2Much@github.com>
 # shellcheck disable=all
 
 pkgname=i3-swallow
@@ -8,7 +8,7 @@ pkgrel=2
 pkgdesc="Swallow a terminal window after a blocking application is run in i3"
 arch=('any')
 groups=('linuxrepos')
-url="https://github.com/The-Repo-Club/i3-swallow"
+url="https://github.com/HeCodes2Much/i3-swallow"
 license=('CC BY-NC-SA 4.0')
 depends=('xdo' 'python-i3ipc')
 makedepends=('git')

@@ -1,5 +1,5 @@
-# Maintainer: The-Repo-Club <The-Repo-Club@github.com>
-# Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# Maintainer: HeCodes2Much <HeCodes2Much@github.com>
+# Contributor: HeCodes2Much <HeCodes2Much@github.com>
 # shellcheck disable=all
 
 _pkgname=wm-cheat
@@ -9,7 +9,7 @@ pkgrel=1
 pkgdesc="cheat sheet for dkwm"
 arch=('any')
 groups=('linuxrepos')
-url="https://github.com/The-Repo-Club/$_pkgname"
+url="https://github.com/HeCodes2Much/$_pkgname"
 license=('GPL3')
 depends=('gtk3' 'dk')
 conflicts=('i3-cheat' 'bspwm-cheat')

@@ -1,5 +1,5 @@
-# Maintainer: The-Repo-Club <The-Repo-Club@github.com>
-# Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# Maintainer: HeCodes2Much <HeCodes2Much@github.com>
+# Contributor: HeCodes2Much <HeCodes2Much@github.com>
 # shellcheck disable=all
 
 pkgname=linuxrepos-mirrorlist
@@ -13,7 +13,7 @@ license=('GPL3')
 options=(!strip !emptydirs)
 backup=("etc/pacman.d/$pkgname")
 source=("$pkgname")
-sha256sums=('cda7cbf8869e5bb25c1d2a3abbd7858aec8dd790f674cfd7450b5f56f6a2a216')
+sha256sums=('cc7949dc99a2e57356b22256dbf6af277f5dde5625cbd2d7165e89805552e566')
 
 package() {
     install -Dm644 "$srcdir/$pkgname" "$pkgdir/etc/pacman.d/$pkgname"

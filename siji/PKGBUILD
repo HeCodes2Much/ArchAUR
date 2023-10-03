@@ -1,5 +1,5 @@
-# Maintainer: The-Repo-Club <The-Repo-Club@github.com>
-# Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# Maintainer: HeCodes2Much <HeCodes2Much@github.com>
+# Contributor: HeCodes2Much <HeCodes2Much@github.com>
 # shellcheck disable=all
 
 pkgname=siji
@@ -7,7 +7,7 @@ pkgver=2021.07.03
 pkgrel=1
 pkgdesc='Iconic bitmap font based on stlarch with additional glyphs'
 arch=('any')
-url="https://github.com/The-Repo-Club/siji"
+url="https://github.com/HeCodes2Much/siji"
 license=('GPLv2')
 depends=('fontconfig' 'xorg-mkfontscale' 'xorg-xset')
 optdepends=('xorg-xfd: use view.sh script to view glyphs')

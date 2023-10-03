@@ -1,12 +1,12 @@
-# Maintainer: The-Repo-Club <The-Repo-Club@github.com>
-# Contributor: The-Repo-Club <The-Repo-Club@github.com>
+# Maintainer: HeCodes2Much <HeCodes2Much@github.com>
+# Contributor: HeCodes2Much <HeCodes2Much@github.com>
 # shellcheck disable=all
 
 pkgname=repowm
 pkgver=2023.08.06
 pkgrel=1
 pkgdesc="A dynamic window manager for X"
-url="https://github.com/The-Repo-Club/$pkgname"
+url="https://github.com/HeCodes2Much/$pkgname"
 arch=('i686' 'x86_64')
 groups=('linuxrepos')
 license=('MIT')

@@ -2,7 +2,7 @@ pkgbase = repomenu
 	pkgdesc = dmenu like menu with the Dracula theme
 	pkgver = 2021.08.21
 	pkgrel = 1
-	url = https://github.com/The-Repo-Club/repomenu
+	url = https://github.com/HeCodes2Much/repomenu
 	arch = any
 	groups = therepoclub
 	license = MIT
@@ -20,7 +20,7 @@ pkgbase = repomenu
 	provides = dmenu
 	conflicts = dmenu
 	replaces = dmenu
-	source = repomenu-2021.08.21.tar.gz::https://github.com/The-Repo-Club/repomenu/archive/2021.08.21.tar.gz
+	source = repomenu-2021.08.21.tar.gz::https://github.com/HeCodes2Much/repomenu/archive/2021.08.21.tar.gz
 	sha256sums = 3bb5cdeca6ec3f5ddd27b194cb8848882d1b31c4c848e8d7e46d9629a588e9b5
 
 pkgname = repomenu

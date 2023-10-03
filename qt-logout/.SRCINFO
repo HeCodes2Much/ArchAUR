@@ -2,13 +2,13 @@ pkgbase = qt-logout
 	pkgdesc = Logout screen for QT using QT5 and pyside2
 	pkgver = 2021.08.24
 	pkgrel = 1
-	url = https://github.com/The-Repo-Club/qt-logout
+	url = https://github.com/HeCodes2Much/qt-logout
 	arch = any
 	groups = therepoclub
 	license = GPL3
 	depends = pyside6
 	optdepends = multimonitorlock: default lock screen for qt-logout
-	source = qt-logout-2021.08.24.tar.gz::https://github.com/The-Repo-Club/qt-logout/archive/2021.08.24.tar.gz
+	source = qt-logout-2021.08.24.tar.gz::https://github.com/HeCodes2Much/qt-logout/archive/2021.08.24.tar.gz
 	sha256sums = 457d211af09a8e990133d25e6433609a3be3d8190c725ed693a1a1b38c3320c1
 
 pkgname = qt-logout

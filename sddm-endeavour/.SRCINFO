@@ -2,12 +2,12 @@ pkgbase = sddm-endeavour
 	pkgdesc = Endeavour Dracula Theme for SDDM
 	pkgver = 2021.07.05
 	pkgrel = 1
-	url = https://github.com/The-Repo-Club/sddm-endeavour
+	url = https://github.com/HeCodes2Much/sddm-endeavour
 	arch = any
 	license = MIT
 	makedepends = git
 	depends = sddm
-	source = sddm-endeavour-2021.07.05.tar.gz::https://github.com/The-Repo-Club/sddm-endeavour/archive/2021.07.05.tar.gz
+	source = sddm-endeavour-2021.07.05.tar.gz::https://github.com/HeCodes2Much/sddm-endeavour/archive/2021.07.05.tar.gz
 	sha256sums = SKIP
 
 pkgname = sddm-endeavour

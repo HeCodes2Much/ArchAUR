@@ -3,7 +3,7 @@
 # shellcheck disable=all
 
 pkgname=linuxrepos-mirrorlist
-pkgver=2022.09.09
+pkgver=2024.04.04
 pkgrel=1
 pkgdesc="linuxrepos mirrorlist"
 arch=('any')
@@ -13,7 +13,7 @@ license=('GPL3')
 options=(!strip !emptydirs)
 backup=("etc/pacman.d/$pkgname")
 source=("$pkgname")
-sha256sums=('cc7949dc99a2e57356b22256dbf6af277f5dde5625cbd2d7165e89805552e566')
+sha256sums=('109fa9f267974c5fada98d1e40b875748192ed464ef57b20c2f1afb9404f5b62')
 
 package() {
     install -Dm644 "$srcdir/$pkgname" "$pkgdir/etc/pacman.d/$pkgname"

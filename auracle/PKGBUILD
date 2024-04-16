@@ -2,7 +2,7 @@
 # shellcheck disable=all
 
 pkgname=auracle
-pkgver=r373.fc335fc
+pkgver=2023.05.17
 pkgrel=1
 pkgdesc='A flexible client for the AUR'
 arch=('x86_64' 'i686')
@@ -15,12 +15,6 @@ provides=("$pkgname")
 conflicts=("$pkgname-git")
 source=("git+https://github.com/inglor/auracle.git")
 b2sums=('SKIP')
-
-pkgver() {
-    cd "$pkgname"
-
-    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-}
 
 prepare() {
   cd "$pkgname"

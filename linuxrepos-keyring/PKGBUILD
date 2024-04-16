@@ -3,7 +3,7 @@
 # shellcheck disable=all
 
 pkgname=linuxrepos-keyring
-pkgver=2022.09.09
+pkgver=2023.09.09
 pkgrel=1
 pkgdesc="linuxrepos keyring"
 arch=('any')

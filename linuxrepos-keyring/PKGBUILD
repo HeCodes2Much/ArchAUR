@@ -3,13 +3,13 @@
 # shellcheck disable=all
 
 pkgname=linuxrepos-keyring
-pkgver=2023.09.09
+pkgver=2024.08.20
 pkgrel=1
-pkgdesc="linuxrepos keyring"
+pkgdesc="linuxreos keyring"
 arch=('any')
 groups=('linuxrepos')
 url="https://github.com/ArchAUR/$pkgname"
 license=('GPL3')
 source=("${pkgname}.install")
-sha256sums=('9d8d890a90ddac269007710af5ab121d4d7df7f13f8cac2f4f4dc8d70c736e9c')
+sha256sums=('7c947f44ddbbb2b2d7e8bef2b7a744abf866b1c2da3f934353b6d4daa8806cab')
 install=${pkgname}.install
